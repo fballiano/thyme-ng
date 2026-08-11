@@ -17,9 +17,5 @@ struct ThymeNGApp: App {
             MenuBarLabel(model: model)
         }
         .menuBarExtraStyle(.menu)
-
-        Settings {
-            SettingsView(model: model)
-        }
     }
 }

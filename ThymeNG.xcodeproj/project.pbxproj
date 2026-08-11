@@ -16,6 +16,7 @@
 		3F9253F3311506F43CB05986 /* SystemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECEEF5ECC1DDA4EC623C1A /* SystemEvents.swift */; };
 		59DCC8494362B2A996B275C4 /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6F2F586AF05D8CDEE3CDB /* TimeFormatterTests.swift */; };
 		65C0576A16843C7CF5B9E1A5 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D58A4175487A1FAB155FE /* AppModel.swift */; };
+		65ED1325197AE0A57183C263 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389FB65F66A9FDBB62E5048A /* SettingsWindowController.swift */; };
 		6C7D45D10AE99E732B407D79 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2B7A9D07E6E59195B17EE /* SettingsView.swift */; };
 		6DBD767767DBA544FFFE9EB7 /* PreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3AF8C8289A278811C581E /* PreferencesTests.swift */; };
 		7E9FC027F845243F418793C7 /* TagPromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */; };
@@ -50,6 +51,7 @@
 		1E2EF8AE1C923077F095565D /* ThymeIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThymeIntents.swift; sourceTree = "<group>"; };
 		2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPromptController.swift; sourceTree = "<group>"; };
 		34217A584B9403287649F397 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		389FB65F66A9FDBB62E5048A /* SettingsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 		3E4567D52DABFB3301003C6B /* TagPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPromptView.swift; sourceTree = "<group>"; };
 		41A24144AA65DE5A4DED4AC9 /* MenuBarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarLabel.swift; sourceTree = "<group>"; };
 		47F5259FC11D4692129E4432 /* thyme-ng.sdef */ = {isa = PBXFileReference; path = "thyme-ng.sdef"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				41A24144AA65DE5A4DED4AC9 /* MenuBarLabel.swift */,
 				8CB53F1AACA167EDCB2D3972 /* MenuContent.swift */,
 				91F2B7A9D07E6E59195B17EE /* SettingsView.swift */,
+				389FB65F66A9FDBB62E5048A /* SettingsWindowController.swift */,
 				2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */,
 				3E4567D52DABFB3301003C6B /* TagPromptView.swift */,
 			);
@@ -292,6 +295,7 @@
 				7FCD56608A723099B1ED6B4D /* Session.swift in Sources */,
 				D8F39B0945F748E88FD730F8 /* SessionStore.swift in Sources */,
 				6C7D45D10AE99E732B407D79 /* SettingsView.swift in Sources */,
+				65ED1325197AE0A57183C263 /* SettingsWindowController.swift in Sources */,
 				1C5E9DA94619D40341039E4D /* Stopwatch.swift in Sources */,
 				3F9253F3311506F43CB05986 /* SystemEvents.swift in Sources */,
 				7E9FC027F845243F418793C7 /* TagPromptController.swift in Sources */,

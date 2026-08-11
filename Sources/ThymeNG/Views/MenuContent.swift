@@ -34,10 +34,8 @@ struct MenuContent: View {
 
         Divider()
 
-        SettingsLink {
-            Text("Preferences…")
-        }
-        .keyboardShortcut(",", modifiers: .command)
+        Button("Preferences…") { model.showSettings() }
+            .keyboardShortcut(",", modifiers: .command)
 
         Button("About thyme-ng") { model.showAbout() }
 

@@ -28,6 +28,7 @@ final class AppModel {
     @ObservationIgnored private let store: SessionStore
     @ObservationIgnored private let notifier = Notifier()
     @ObservationIgnored private let tagPrompt = TagPromptController()
+    @ObservationIgnored private let settingsWindow = SettingsWindowController()
     @ObservationIgnored private var systemEvents: SystemEvents?
     @ObservationIgnored private var didBootstrap = false
 
@@ -230,6 +231,10 @@ final class AppModel {
     }
 
     // MARK: - Panels
+
+    func showSettings() {
+        settingsWindow.present(model: self)
+    }
 
     func showAbout() {
         NSApp.activate()
