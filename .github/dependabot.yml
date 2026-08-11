@@ -1,0 +1,13 @@
+version: 2
+
+# Dependabot only watches the GitHub Actions here. It cannot read the Swift
+# packages, because they live in ThymeNG.xcodeproj and not in a Package.swift.
+# Update those in Xcode with File → Packages → Update to Latest Package
+# Versions, or change the version in project.yml and run make generate.
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "ci"
