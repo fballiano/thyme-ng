@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0192AB8B894077297AC9C486 /* RuntimeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8F22942CBFE241F576D508 /* RuntimeEnvironment.swift */; };
+		078958ED0840684E2E23EAA8 /* MenuContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB53F1AACA167EDCB2D3972 /* MenuContent.swift */; };
+		0B1DC59DDEE99579E42C1628 /* ScriptCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7C5760C77AA88AF3F7AD9 /* ScriptCommands.swift */; };
+		1213499E1BCA5081F4B54C18 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2099166D69301EA7ADCDB0 /* Preferences.swift */; };
+		1742667C87AB33F3D5B6F6EA /* MenuBarLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A24144AA65DE5A4DED4AC9 /* MenuBarLabel.swift */; };
+		1C5E9DA94619D40341039E4D /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34217A584B9403287649F397 /* Stopwatch.swift */; };
+		3F9253F3311506F43CB05986 /* SystemEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECEEF5ECC1DDA4EC623C1A /* SystemEvents.swift */; };
+		59DCC8494362B2A996B275C4 /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C6F2F586AF05D8CDEE3CDB /* TimeFormatterTests.swift */; };
+		65C0576A16843C7CF5B9E1A5 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D58A4175487A1FAB155FE /* AppModel.swift */; };
+		6C7D45D10AE99E732B407D79 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2B7A9D07E6E59195B17EE /* SettingsView.swift */; };
+		6DBD767767DBA544FFFE9EB7 /* PreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3AF8C8289A278811C581E /* PreferencesTests.swift */; };
+		7E9FC027F845243F418793C7 /* TagPromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */; };
+		7FCD56608A723099B1ED6B4D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234B271DFCF611019005273 /* Session.swift */; };
+		926C81D8E15E6A2BF499F67A /* SessionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871728355C68822D38FDC2F1 /* SessionStoreTests.swift */; };
+		945E58792F75956A8BCCE2D4 /* TagPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4567D52DABFB3301003C6B /* TagPromptView.swift */; };
+		95EAA428DB14A1C060CC28A0 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06420CA284ABE127568F9AE7 /* Notifier.swift */; };
+		981F1DE06BAA86FCE4652D19 /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B091D3FF8B5EAECEC936B80A /* HotKeys.swift */; };
+		9A3FF1F93FAE00A0AE200F94 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 60FED1E76A91D77BF70A4D48 /* KeyboardShortcuts */; };
+		9D2198FBC6A045B3E657410F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D13145EF7D88F482F2AE3C /* Assets.xcassets */; };
+		AB1531230198644754A5B92F /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246EF75538D735764F98357 /* StopwatchTests.swift */; };
+		B023579933933E709F2FC21B /* ThymeIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EF8AE1C923077F095565D /* ThymeIntents.swift */; };
+		BD891F9B3E8E27686433C2E9 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD582D0710DBD3928D0D7FA /* TimeFormatter.swift */; };
+		D8F39B0945F748E88FD730F8 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CF1F307F33F75A0E6319F /* SessionStore.swift */; };
+		E27E2006D97612266959ED62 /* ThymeNGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C041ECA873A7C07DDF307 /* ThymeNGApp.swift */; };
+		E5EEAFD0DB91F716DC33BF01 /* thyme-ng.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 47F5259FC11D4692129E4432 /* thyme-ng.sdef */; };
+		F642745AEF8514C8FFD6A923 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D8F57821236811506786D /* LoginItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70DFEBC3822E574EE27177C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCCF432E77BE1934A8CBEBE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8EB4D2B7D0457B5710CB2CE;
+			remoteInfo = ThymeNG;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06420CA284ABE127568F9AE7 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		1E2EF8AE1C923077F095565D /* ThymeIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThymeIntents.swift; sourceTree = "<group>"; };
+		2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPromptController.swift; sourceTree = "<group>"; };
+		34217A584B9403287649F397 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		3E4567D52DABFB3301003C6B /* TagPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPromptView.swift; sourceTree = "<group>"; };
+		41A24144AA65DE5A4DED4AC9 /* MenuBarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarLabel.swift; sourceTree = "<group>"; };
+		47F5259FC11D4692129E4432 /* thyme-ng.sdef */ = {isa = PBXFileReference; path = "thyme-ng.sdef"; sourceTree = "<group>"; };
+		4BD582D0710DBD3928D0D7FA /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		683D58A4175487A1FAB155FE /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		687CF1F307F33F75A0E6319F /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		714BED4B44B969C889AEC8E5 /* ThymeNGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThymeNGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D13145EF7D88F482F2AE3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81ECEEF5ECC1DDA4EC623C1A /* SystemEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEvents.swift; sourceTree = "<group>"; };
+		871728355C68822D38FDC2F1 /* SessionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStoreTests.swift; sourceTree = "<group>"; };
+		8CB53F1AACA167EDCB2D3972 /* MenuContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContent.swift; sourceTree = "<group>"; };
+		91F2B7A9D07E6E59195B17EE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9234B271DFCF611019005273 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		9F8F22942CBFE241F576D508 /* RuntimeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeEnvironment.swift; sourceTree = "<group>"; };
+		B091D3FF8B5EAECEC936B80A /* HotKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
+		BB7C041ECA873A7C07DDF307 /* ThymeNGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThymeNGApp.swift; sourceTree = "<group>"; };
+		E1D3AF8C8289A278811C581E /* PreferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTests.swift; sourceTree = "<group>"; };
+		E246EF75538D735764F98357 /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
+		E2B7C5760C77AA88AF3F7AD9 /* ScriptCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptCommands.swift; sourceTree = "<group>"; };
+		F6C6F2F586AF05D8CDEE3CDB /* TimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
+		FA16382664556D528FDC7B45 /* ThymeNG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThymeNG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB5D8F57821236811506786D /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
+		FE2099166D69301EA7ADCDB0 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EEDBC8382B00F515D4EE3B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A3FF1F93FAE00A0AE200F94 /* KeyboardShortcuts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C11C30CA1E05AC37ADA4CF1 /* ThymeNG */ = {
+			isa = PBXGroup;
+			children = (
+				84BD44D8D69F03AA6C2BF3EE /* Scripting */,
+				762BCA3EDA97CB9F1C9F150F /* Views */,
+				683D58A4175487A1FAB155FE /* AppModel.swift */,
+				B091D3FF8B5EAECEC936B80A /* HotKeys.swift */,
+				FB5D8F57821236811506786D /* LoginItem.swift */,
+				06420CA284ABE127568F9AE7 /* Notifier.swift */,
+				FE2099166D69301EA7ADCDB0 /* Preferences.swift */,
+				9F8F22942CBFE241F576D508 /* RuntimeEnvironment.swift */,
+				9234B271DFCF611019005273 /* Session.swift */,
+				687CF1F307F33F75A0E6319F /* SessionStore.swift */,
+				34217A584B9403287649F397 /* Stopwatch.swift */,
+				81ECEEF5ECC1DDA4EC623C1A /* SystemEvents.swift */,
+				BB7C041ECA873A7C07DDF307 /* ThymeNGApp.swift */,
+				4BD582D0710DBD3928D0D7FA /* TimeFormatter.swift */,
+			);
+			path = ThymeNG;
+			sourceTree = "<group>";
+		};
+		47DE3956E46E2B23AFDC75E8 = {
+			isa = PBXGroup;
+			children = (
+				87D965C99201954FF48CE61F /* Resources */,
+				7D2738056F1AF94430EFF333 /* Sources */,
+				E110CA175F0F9C4099E57A1F /* Tests */,
+				E2F1B3D490BC16A9F752833B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E4CC11579D5B9E3197F0591 /* ThymeNGTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1D3AF8C8289A278811C581E /* PreferencesTests.swift */,
+				871728355C68822D38FDC2F1 /* SessionStoreTests.swift */,
+				E246EF75538D735764F98357 /* StopwatchTests.swift */,
+				F6C6F2F586AF05D8CDEE3CDB /* TimeFormatterTests.swift */,
+			);
+			path = ThymeNGTests;
+			sourceTree = "<group>";
+		};
+		762BCA3EDA97CB9F1C9F150F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41A24144AA65DE5A4DED4AC9 /* MenuBarLabel.swift */,
+				8CB53F1AACA167EDCB2D3972 /* MenuContent.swift */,
+				91F2B7A9D07E6E59195B17EE /* SettingsView.swift */,
+				2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */,
+				3E4567D52DABFB3301003C6B /* TagPromptView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D2738056F1AF94430EFF333 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0C11C30CA1E05AC37ADA4CF1 /* ThymeNG */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		84BD44D8D69F03AA6C2BF3EE /* Scripting */ = {
+			isa = PBXGroup;
+			children = (
+				E2B7C5760C77AA88AF3F7AD9 /* ScriptCommands.swift */,
+				1E2EF8AE1C923077F095565D /* ThymeIntents.swift */,
+			);
+			path = Scripting;
+			sourceTree = "<group>";
+		};
+		87D965C99201954FF48CE61F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71D13145EF7D88F482F2AE3C /* Assets.xcassets */,
+				47F5259FC11D4692129E4432 /* thyme-ng.sdef */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E110CA175F0F9C4099E57A1F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4E4CC11579D5B9E3197F0591 /* ThymeNGTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E2F1B3D490BC16A9F752833B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA16382664556D528FDC7B45 /* ThymeNG.app */,
+				714BED4B44B969C889AEC8E5 /* ThymeNGTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		097560E8CD22581FD3880C44 /* ThymeNGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54406A3B5D89435C82FDDE1F /* Build configuration list for PBXNativeTarget "ThymeNGTests" */;
+			buildPhases = (
+				39678AF8228B9DE1BC7C85D0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1250E8043ECD578981D07ABC /* PBXTargetDependency */,
+			);
+			name = ThymeNGTests;
+			packageProductDependencies = (
+			);
+			productName = ThymeNGTests;
+			productReference = 714BED4B44B969C889AEC8E5 /* ThymeNGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B8EB4D2B7D0457B5710CB2CE /* ThymeNG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB86DE9CBD8D981BADC3B5D4 /* Build configuration list for PBXNativeTarget "ThymeNG" */;
+			buildPhases = (
+				26FA5B9647942660CC528EB0 /* Sources */,
+				4643AB347A857CFE51CCE5E7 /* Resources */,
+				5EEDBC8382B00F515D4EE3B8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThymeNG;
+			packageProductDependencies = (
+				60FED1E76A91D77BF70A4D48 /* KeyboardShortcuts */,
+			);
+			productName = ThymeNG;
+			productReference = FA16382664556D528FDC7B45 /* ThymeNG.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCCF432E77BE1934A8CBEBE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B8EB4D2B7D0457B5710CB2CE = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 90EC22D8843A3FDD8A0AA18B /* Build configuration list for PBXProject "ThymeNG" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 47DE3956E46E2B23AFDC75E8;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2EE8743736212BAB65535C97 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E2F1B3D490BC16A9F752833B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B8EB4D2B7D0457B5710CB2CE /* ThymeNG */,
+				097560E8CD22581FD3880C44 /* ThymeNGTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4643AB347A857CFE51CCE5E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D2198FBC6A045B3E657410F /* Assets.xcassets in Resources */,
+				E5EEAFD0DB91F716DC33BF01 /* thyme-ng.sdef in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26FA5B9647942660CC528EB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C0576A16843C7CF5B9E1A5 /* AppModel.swift in Sources */,
+				981F1DE06BAA86FCE4652D19 /* HotKeys.swift in Sources */,
+				F642745AEF8514C8FFD6A923 /* LoginItem.swift in Sources */,
+				1742667C87AB33F3D5B6F6EA /* MenuBarLabel.swift in Sources */,
+				078958ED0840684E2E23EAA8 /* MenuContent.swift in Sources */,
+				95EAA428DB14A1C060CC28A0 /* Notifier.swift in Sources */,
+				1213499E1BCA5081F4B54C18 /* Preferences.swift in Sources */,
+				0192AB8B894077297AC9C486 /* RuntimeEnvironment.swift in Sources */,
+				0B1DC59DDEE99579E42C1628 /* ScriptCommands.swift in Sources */,
+				7FCD56608A723099B1ED6B4D /* Session.swift in Sources */,
+				D8F39B0945F748E88FD730F8 /* SessionStore.swift in Sources */,
+				6C7D45D10AE99E732B407D79 /* SettingsView.swift in Sources */,
+				1C5E9DA94619D40341039E4D /* Stopwatch.swift in Sources */,
+				3F9253F3311506F43CB05986 /* SystemEvents.swift in Sources */,
+				7E9FC027F845243F418793C7 /* TagPromptController.swift in Sources */,
+				945E58792F75956A8BCCE2D4 /* TagPromptView.swift in Sources */,
+				B023579933933E709F2FC21B /* ThymeIntents.swift in Sources */,
+				E27E2006D97612266959ED62 /* ThymeNGApp.swift in Sources */,
+				BD891F9B3E8E27686433C2E9 /* TimeFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39678AF8228B9DE1BC7C85D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DBD767767DBA544FFFE9EB7 /* PreferencesTests.swift in Sources */,
+				926C81D8E15E6A2BF499F67A /* SessionStoreTests.swift in Sources */,
+				AB1531230198644754A5B92F /* StopwatchTests.swift in Sources */,
+				59DCC8494362B2A996B275C4 /* TimeFormatterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1250E8043ECD578981D07ABC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8EB4D2B7D0457B5710CB2CE /* ThymeNG */;
+			targetProxy = 70DFEBC3822E574EE27177C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		313EED85EBE43C68EB47BEF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Release;
+		};
+		3B831D6BA5917B055573E936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng-tests";
+				PRODUCT_MODULE_NAME = ThymeNGTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thyme-ng.app/Contents/MacOS/thyme-ng";
+			};
+			name = Release;
+		};
+		3BA00DCBFFD029D0A359E90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng-tests";
+				PRODUCT_MODULE_NAME = ThymeNGTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thyme-ng.app/Contents/MacOS/thyme-ng";
+			};
+			name = Debug;
+		};
+		6606BFC13FA3B5F7AF9199A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				VALID_ARCHS = "arm64 x86_64";
+			};
+			name = Debug;
+		};
+		729BA61E66983AF6B22D7E7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng";
+				PRODUCT_MODULE_NAME = ThymeNG;
+				PRODUCT_NAME = "thyme-ng";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F422E454F8A33F3562449DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng";
+				PRODUCT_MODULE_NAME = ThymeNG;
+				PRODUCT_NAME = "thyme-ng";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54406A3B5D89435C82FDDE1F /* Build configuration list for PBXNativeTarget "ThymeNGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA00DCBFFD029D0A359E90E /* Debug */,
+				3B831D6BA5917B055573E936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		90EC22D8843A3FDD8A0AA18B /* Build configuration list for PBXProject "ThymeNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6606BFC13FA3B5F7AF9199A0 /* Debug */,
+				313EED85EBE43C68EB47BEF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AB86DE9CBD8D981BADC3B5D4 /* Build configuration list for PBXNativeTarget "ThymeNG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F422E454F8A33F3562449DEA /* Debug */,
+				729BA61E66983AF6B22D7E7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2EE8743736212BAB65535C97 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60FED1E76A91D77BF70A4D48 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EE8743736212BAB65535C97 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BCCF432E77BE1934A8CBEBE8 /* Project object */;
+}

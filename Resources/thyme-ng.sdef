@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+<dictionary title="thyme-ng">
+    <suite name="thyme-ng Suite" code="THYM" description="thyme-ng scripts">
+        <command name="start" code="THYMstrt" description="Start or continue the timer">
+            <cocoa class="StartCommand"/>
+        </command>
+        <command name="pause" code="THYMpaus" description="Pause the timer">
+            <cocoa class="PauseCommand"/>
+        </command>
+        <command name="stop" code="THYMstop" description="Store the session and reset the timer">
+            <cocoa class="StopCommand"/>
+        </command>
+        <command name="toggle" code="THYMtogl" description="Start the timer if it is stopped, pause it if it runs">
+            <cocoa class="ToggleCommand"/>
+        </command>
+        <command name="restart" code="THYMrstr" description="Store the session and start a new one">
+            <cocoa class="RestartCommand"/>
+        </command>
+        <command name="elapsed" code="THYMelps" description="Return the time on the stopwatch">
+            <cocoa class="ElapsedCommand"/>
+            <result type="text" description="The elapsed time, as MM:SS or HH:MM:SS"/>
+        </command>
+    </suite>
+</dictionary>
