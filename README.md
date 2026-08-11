@@ -22,16 +22,16 @@
 
 ## Features
 
-| | |
-| --- | --- |
-| **Always in view** | The menu bar shows `MM:SS`, then `HH:MM:SS` after an hour. |
-| **Global hot keys** | Start, restart and finish from any application. |
-| **Tagged sessions** | Every finished session keeps its date, its length and a label. |
-| **Sleep aware** | It pauses on sleep, screensaver and screen lock, then continues. |
-| **Scriptable** | AppleScript, Shortcuts and Spotlight drive the same commands. |
-| **Your data, exported** | One click writes every session to JSON. |
-| **Tidy by itself** | Old sessions go away, so the list stays short. |
-| **Light** | A 2.5 MB universal application. No dock icon, no window in your way. |
+<table>
+<tr><td><b>Always in view</b></td><td>The menu bar shows <code>MM:SS</code>, then <code>HH:MM:SS</code> after an hour.</td></tr>
+<tr><td><b>Global hot keys</b></td><td>Start, restart and finish from any application.</td></tr>
+<tr><td><b>Tagged sessions</b></td><td>Every finished session keeps its date, its length and a label.</td></tr>
+<tr><td><b>Sleep aware</b></td><td>It pauses on sleep, screensaver and screen lock, then continues.</td></tr>
+<tr><td><b>Scriptable</b></td><td>AppleScript, Shortcuts and Spotlight drive the same commands.</td></tr>
+<tr><td><b>Your data, exported</b></td><td>One click writes every session to JSON.</td></tr>
+<tr><td><b>Tidy by itself</b></td><td>Old sessions go away, so the list stays short.</td></tr>
+<tr><td><b>Light</b></td><td>A 2.5 MB universal application. No dock icon, no window in your way.</td></tr>
+</table>
 
 ## Install
 
