@@ -42,10 +42,13 @@ With [Homebrew](https://brew.sh):
 
 ```bash
 brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
+brew trust --cask fballiano/thyme-ng/thyme-ng
 brew install --cask thyme-ng
 ```
 
-The URL is part of the command, because this repository is the tap itself.
+The URL is part of the first command, because this repository is the tap itself.
+Homebrew 6 refuses to load a cask from a tap outside `Homebrew/*` until you
+trust it, so the second command is also necessary.
 
 Or download the DMG from the
 [latest release](https://github.com/fballiano/thyme-ng/releases/latest).
@@ -54,7 +57,8 @@ Open it and drag **thyme-ng** into **Applications**.
 > [!IMPORTANT]
 > The application is signed ad hoc, not with an Apple Developer ID, so macOS
 > blocks the first launch. Open **System Settings → Privacy & Security** and
-> select **Open Anyway**.
+> select **Open Anyway**. Homebrew also marks the application, so this step
+> applies to both ways to install.
 >
 > A terminal does the same thing:
 >

@@ -102,19 +102,34 @@ URL:
 
 ```bash
 brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
+brew trust --cask fballiano/thyme-ng/thyme-ng
 brew install --cask thyme-ng
 ```
+
+Homebrew 6 refuses to load a cask from a tap outside `Homebrew/*` until the user
+trusts it, so `brew trust` is part of the instructions.
 
 The last step of the release workflow writes the new `version` and `sha256` into
 the cask and pushes the change to the default branch. Do not edit the two lines
 by hand.
 
-`brew audit` refuses a path, so a test of the cask needs a tap:
+`brew audit` refuses a path, so a test of the cask needs the tap and the trust:
 
 ```bash
-brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
 brew audit --cask --strict --online fballiano/thyme-ng/thyme-ng
 ```
+
+To test an install without a change to `/Applications`, give a different
+directory. `uninstall` does not accept the option, because it reads the
+directory from the receipt of the install:
+
+```bash
+brew install --cask --appdir=/tmp/apps thyme-ng
+brew uninstall --cask thyme-ng
+```
+
+Homebrew adds the quarantine attribute, and `--no-quarantine` no longer exists,
+so a user of the cask must also select **Open Anyway** at the first launch.
 
 `Homebrew/homebrew-cask`, the official repository, is not possible yet. A
 submission by the owner of the repository needs 225 stars, 90 forks or 90
