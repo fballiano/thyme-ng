@@ -107,8 +107,9 @@ jobs:
             --target "${{ github.sha }}"
 
       # This repository is also the Homebrew tap. The cask must point at the
-      # release that the step above published, so this step runs last.
-      - name: Update the Homebrew cask
+      # release that the step above published, so this step runs last. The same
+      # commit stores the version, which a local build reads.
+      - name: Update the Homebrew cask and the stored version
         env:
           BRANCH: ${{ github.event.repository.default_branch }}
         run: |
@@ -122,11 +123,18 @@ jobs:
             -e "s|^  version \".*\"$|  version \"$version\"|" \
             -e "s|^  sha256 \".*\"$|  sha256 \"$sha256\"|" \
             Casks/thyme-ng.rb
-          if git diff --quiet -- Casks/thyme-ng.rb; then
-            echo "The cask already holds version $version."
+          sed -i '' \
+            -e "s|^    MARKETING_VERSION: \".*\"$|    MARKETING_VERSION: \"$version\"|" \
+            project.yml
+          sed -i '' \
+            -e "s|MARKETING_VERSION = .*;|MARKETING_VERSION = $version;|" \
+            ThymeNG.xcodeproj/project.pbxproj
+          files="Casks/thyme-ng.rb project.yml ThymeNG.xcodeproj/project.pbxproj"
+          if git diff --quiet -- $files; then
+            echo "The repository already holds version $version."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update the Homebrew cask to $version" -- Casks/thyme-ng.rb
+          git commit -m "Update the Homebrew cask and the version to $version" -- $files
           git push origin "HEAD:$BRANCH"

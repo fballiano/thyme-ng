@@ -89,6 +89,10 @@ new GitHub release. It passes the version of the tag as `MARKETING_VERSION` and
 the run number as `CURRENT_PROJECT_VERSION`, so `project.yml` does not need a
 change for each release.
 
+The last step then writes the version into `project.yml` and into
+`ThymeNG.xcodeproj/project.pbxproj`, so a local build shows the version of the
+last release. Do not edit the `MARKETING_VERSION` lines by hand.
+
 The application is signed ad hoc. There is no Apple Developer ID and no
 notarization, so macOS blocks the first launch. The release notes and the README
 explain the two ways to open it.
@@ -109,9 +113,8 @@ brew install --cask thyme-ng
 Homebrew 6 refuses to load a cask from a tap outside `Homebrew/*` until the user
 trusts it, so `brew trust` is part of the instructions.
 
-The last step of the release workflow writes the new `version` and `sha256` into
-the cask and pushes the change to the default branch. Do not edit the two lines
-by hand.
+The same last step writes the new `version` and `sha256` into the cask and pushes
+the change to the default branch. Do not edit the two lines by hand.
 
 `brew audit` refuses a path, so a test of the cask needs the tap and the trust:
 
