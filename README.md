@@ -6,8 +6,6 @@
 
 **A menu bar stopwatch for macOS.**
 
-Start it, forget it, and see the time in your menu bar.
-
 [![Latest release](https://img.shields.io/github/v/release/fballiano/thyme-ng?style=for-the-badge&color=2F7D3A&labelColor=1B1F23)](https://github.com/fballiano/thyme-ng/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/fballiano/thyme-ng/total?style=for-the-badge&color=2F7D3A&labelColor=1B1F23)](https://github.com/fballiano/thyme-ng/releases)
 [![macOS 15+](https://img.shields.io/badge/macOS-15%2B-2F7D3A?style=for-the-badge&labelColor=1B1F23&logo=apple&logoColor=white)](#install)
@@ -30,14 +28,14 @@ Start it, forget it, and see the time in your menu bar.
 
 | | |
 | --- | --- |
-| ⏱ **Always in view** | The menu bar shows `MM:SS`, then `HH:MM:SS` after an hour. |
-| ⌨️ **Global hot keys** | Start, restart and finish from any application. |
-| 🏷 **Tagged sessions** | Every finished session keeps its date, its length and a label. |
-| 💤 **Sleep aware** | It pauses on sleep, screensaver and screen lock, then continues. |
-| 🤖 **Scriptable** | AppleScript, Shortcuts and Spotlight drive the same commands. |
-| 📤 **Your data, exported** | One click writes every session to JSON. |
-| 🧹 **Tidy by itself** | Old sessions go away, so the list stays short. |
-| 🪶 **Light** | A 2.5 MB universal application. No dock icon, no window in your way. |
+| **Always in view** | The menu bar shows `MM:SS`, then `HH:MM:SS` after an hour. |
+| **Global hot keys** | Start, restart and finish from any application. |
+| **Tagged sessions** | Every finished session keeps its date, its length and a label. |
+| **Sleep aware** | It pauses on sleep, screensaver and screen lock, then continues. |
+| **Scriptable** | AppleScript, Shortcuts and Spotlight drive the same commands. |
+| **Your data, exported** | One click writes every session to JSON. |
+| **Tidy by itself** | Old sessions go away, so the list stays short. |
+| **Light** | A 2.5 MB universal application. No dock icon, no window in your way. |
 
 ## Install
 
