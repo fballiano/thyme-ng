@@ -96,9 +96,9 @@ func drawIcon(pixels: Int) -> NSBitmapImageRep {
 
     let glyph = tablerStopwatchPath()
     glyph.transform(using: transform)
-    // Tabler ships the icon at stroke-width 2. 1.5 is lighter and matches
-    // `StopwatchGlyph.strokeWidth`, which the menu bar uses.
-    glyph.lineWidth = 1.5 * scale
+    // The stroke width Tabler ships. It matches `StopwatchGlyph.strokeWidth`,
+    // which the menu bar uses.
+    glyph.lineWidth = 2 * scale
     glyph.lineCapStyle = .round // stroke-linecap="round"
     glyph.lineJoinStyle = .round // stroke-linejoin="round"
 

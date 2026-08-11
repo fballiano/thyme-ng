@@ -15,9 +15,10 @@ enum StopwatchGlyph {
     /// Tabler draws on a 24 x 24 grid, with the y axis pointing down.
     static let grid: CGFloat = 24
 
-    /// Tabler ships the icon at stroke-width 2. 1.5 is lighter and reads better
-    /// in the menu bar and in the application icon.
-    static let strokeWidth: CGFloat = 1.5
+    /// The stroke width Tabler ships. The grid is drawn into a 20 point box, so
+    /// the line is 1.67 points on screen. A lighter value looks thin next to the
+    /// other menu bar icons.
+    static let strokeWidth: CGFloat = 2
 
     /// The image for the menu bar. It is a template, so the menu bar colours it
     /// itself: it follows light and dark, and it inverts while the menu is open.

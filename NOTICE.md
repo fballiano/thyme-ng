@@ -21,7 +21,7 @@ Fetched by Swift Package Manager, not vendored.
 ## Tabler Icons
 
 The application icon and the menu bar icon redraw the `stopwatch` outline from
-Tabler Icons, at stroke width 1.5. The 24 x 24 path is reproduced twice: in
+Tabler Icons, at its own stroke width 2. The 24 x 24 path is reproduced twice: in
 `Sources/ThymeNG/Views/StopwatchGlyph.swift` for the menu bar, and in
 `Tools/make-icon.swift` for the application icon.
 

@@ -1,18 +1,14 @@
 <div align="center">
-
-<img src="Resources/Assets.xcassets/AppIcon.appiconset/icon_256.png" width="140" alt="thyme-ng" />
-
-# thyme-ng
-
-**A menu bar stopwatch for macOS.**
-
-[![Latest release](https://img.shields.io/github/v/release/fballiano/thyme-ng?style=for-the-badge&color=2F7D3A&labelColor=1B1F23)](https://github.com/fballiano/thyme-ng/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/fballiano/thyme-ng/total?style=for-the-badge&color=2F7D3A&labelColor=1B1F23)](https://github.com/fballiano/thyme-ng/releases)
-[![macOS 15+](https://img.shields.io/badge/macOS-15%2B-2F7D3A?style=for-the-badge&labelColor=1B1F23&logo=apple&logoColor=white)](#install)
-[![MIT licence](https://img.shields.io/badge/licence-MIT-2F7D3A?style=for-the-badge&labelColor=1B1F23)](LICENSE)
-
-### [⬇︎ Download the latest DMG](https://github.com/fballiano/thyme-ng/releases/latest)
-
+<img src="Resources/Assets.xcassets/AppIcon.appiconset/icon_256.png" width="128" alt="thyme-ng" />
+<h1>thyme-ng</h1>
+<p><strong>A menu bar stopwatch for macOS.</strong></p>
+<p>
+<a href="https://github.com/fballiano/thyme-ng/releases/latest"><img src="https://img.shields.io/github/v/release/fballiano/thyme-ng?style=for-the-badge&color=2F7D3A&labelColor=1B1F23" alt="Latest release" /></a>
+<a href="https://github.com/fballiano/thyme-ng/releases"><img src="https://img.shields.io/github/downloads/fballiano/thyme-ng/total?style=for-the-badge&color=2F7D3A&labelColor=1B1F23" alt="Downloads" /></a>
+<img src="https://img.shields.io/badge/macOS-15%2B-2F7D3A?style=for-the-badge&labelColor=1B1F23&logo=apple&logoColor=white" alt="macOS 15 or later" />
+<a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT-2F7D3A?style=for-the-badge&labelColor=1B1F23" alt="MIT licence" /></a>
+</p>
+<p><a href="https://github.com/fballiano/thyme-ng/releases/latest"><img src="https://img.shields.io/badge/Download%20for%20macOS-2F7D3A?style=for-the-badge&labelColor=2F7D3A&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTQgMTd2MmEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyIC0ydi0yIi8+PHBhdGggZD0iTTcgMTFsNSA1bDUgLTUiLz48cGF0aCBkPSJNMTIgNGwwIDEyIi8+PC9zdmc+" alt="Download for macOS" height="36" /></a></p>
 </div>
 
 <table align=center><tr><td align=center>
