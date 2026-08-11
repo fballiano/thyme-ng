@@ -4,8 +4,9 @@ name: Release
 #
 #   git tag -a v1.0.0 -m "v1.0.0" && git push origin v1.0.0
 #
-# The workflow builds the universal Release app, packs it into a DMG and
-# attaches the DMG to a new GitHub release.
+# The workflow builds the universal Release app, packs it into a DMG, attaches
+# the DMG to a new GitHub release and updates the Homebrew cask on the default
+# branch.
 
 on:
   push:
@@ -104,3 +105,28 @@ jobs:
             --notes-file /tmp/notes.md \
             --generate-notes \
             --target "${{ github.sha }}"
+
+      # This repository is also the Homebrew tap. The cask must point at the
+      # release that the step above published, so this step runs last.
+      - name: Update the Homebrew cask
+        env:
+          BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.version }}"
+          sha256="${{ steps.dmg.outputs.sha256 }}"
+          # A tag build checks out a detached HEAD, so move to the branch first.
+          git fetch --depth 1 origin "$BRANCH"
+          git checkout -B "$BRANCH" "origin/$BRANCH"
+          sed -i '' \
+            -e "s|^  version \".*\"$|  version \"$version\"|" \
+            -e "s|^  sha256 \".*\"$|  sha256 \"$sha256\"|" \
+            Casks/thyme-ng.rb
+          if git diff --quiet -- Casks/thyme-ng.rb; then
+            echo "The cask already holds version $version."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update the Homebrew cask to $version" -- Casks/thyme-ng.rb
+          git push origin "HEAD:$BRANCH"

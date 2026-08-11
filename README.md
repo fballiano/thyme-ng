@@ -38,7 +38,17 @@
 
 ## Install
 
-Download the DMG from the [latest release](https://github.com/fballiano/thyme-ng/releases/latest).
+With [Homebrew](https://brew.sh):
+
+```bash
+brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
+brew install --cask thyme-ng
+```
+
+The URL is part of the command, because this repository is the tap itself.
+
+Or download the DMG from the
+[latest release](https://github.com/fballiano/thyme-ng/releases/latest).
 Open it and drag **thyme-ng** into **Applications**.
 
 > [!IMPORTANT]

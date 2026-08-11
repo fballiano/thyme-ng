@@ -93,6 +93,35 @@ The application is signed ad hoc. There is no Apple Developer ID and no
 notarization, so macOS blocks the first launch. The release notes and the README
 explain the two ways to open it.
 
+## Homebrew
+
+This repository is also the Homebrew tap. The cask is `Casks/thyme-ng.rb`. A tap
+needs only a `Casks/` directory at its root, so no second repository exists. The
+name of the repository has no `homebrew-` prefix, so the tap command needs the
+URL:
+
+```bash
+brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
+brew install --cask thyme-ng
+```
+
+The last step of the release workflow writes the new `version` and `sha256` into
+the cask and pushes the change to the default branch. Do not edit the two lines
+by hand.
+
+`brew audit` refuses a path, so a test of the cask needs a tap:
+
+```bash
+brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
+brew audit --cask --strict --online fballiano/thyme-ng/thyme-ng
+```
+
+`Homebrew/homebrew-cask`, the official repository, is not possible yet. A
+submission by the owner of the repository needs 225 stars, 90 forks or 90
+watchers. The ad hoc signature is a second problem: Homebrew adds the quarantine
+attribute, and Homebrew does not accept an application that needs the user to
+bypass Gatekeeper.
+
 ## Project file
 
 `ThymeNG.xcodeproj` is generated from `project.yml` by XcodeGen, but it is
