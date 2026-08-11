@@ -1,5 +1,8 @@
 <div align="center">
-<img src="Resources/Assets.xcassets/AppIcon.appiconset/icon_256.png" width="128" alt="thyme-ng" />
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="Docs/icon-dark.png" />
+<img src="Docs/icon-light.png" width="128" alt="thyme-ng" />
+</picture>
 <h1>thyme-ng</h1>
 <p><strong>A menu bar stopwatch for macOS.</strong></p>
 <p>
@@ -30,7 +33,7 @@
 <tr><td><b>Scriptable</b></td><td>AppleScript, Shortcuts and Spotlight drive the same commands.</td></tr>
 <tr><td><b>Your data, exported</b></td><td>One click writes every session to JSON.</td></tr>
 <tr><td><b>Tidy by itself</b></td><td>Old sessions go away, so the list stays short.</td></tr>
-<tr><td><b>Light</b></td><td>A 2.5 MB universal application. No dock icon, no window in your way.</td></tr>
+<tr><td><b>Light and dark</b></td><td>The icon follows the system, in the menu bar and in the Finder.</td></tr>
 </table>
 
 ## Install

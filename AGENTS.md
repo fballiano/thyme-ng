@@ -38,13 +38,41 @@ Add the test function name for one test, for example
 Parallel testing must stay off. The test bundle loads into the real application,
 so a parallel run launches one copy of the application for each test worker.
 
-To redraw the application icon: `swift Tools/make-icon.swift`.
+## Icons
 
 The application icon and the menu bar icon are the same Tabler `stopwatch`
 outline at stroke width 2. The path exists twice, because the icon script runs
 outside the application and cannot import its code: in
 `Sources/ThymeNG/Views/StopwatchGlyph.swift` and in `Tools/make-icon.swift`.
 Change the two together.
+
+The application icon is an Icon Composer document, `Resources/AppIcon.icon`:
+
+| File | What it is |
+| --- | --- |
+| `icon.json` | Written by hand. It holds the colours of the two appearances. |
+| `Assets/stopwatch.svg` | Written by `Tools/make-icon.swift`. |
+| `Docs/icon-light.png`, `Docs/icon-dark.png` | The previews for the README. |
+
+Run `swift Tools/make-icon.swift` after any change of the path. The script turns
+the stroke into a filled outline, because a layer of a `.icon` is filled and Icon
+Composer colours it per appearance.
+
+`actool` builds two things from the document: an icon group with the `Aqua` and
+`DarkAqua` appearances for macOS 26, and `AppIcon.icns` for macOS 15, which has
+no dark application icons. The light drawing is the fallback.
+
+`project.yml` needs `options.fileTypes.icon.file: true`. Without it XcodeGen
+adds the files inside the document one by one and the icon never reaches
+`actool`.
+
+To look at the result without a build:
+
+```bash
+"$(xcode-select -p)/../Applications/Icon Composer.app/Contents/Executables/ictool" \
+  Resources/AppIcon.icon --export-image --output-file /tmp/icon.png \
+  --platform macOS --rendition Dark --width 512 --height 512 --scale 1
+```
 
 ## Releases
 

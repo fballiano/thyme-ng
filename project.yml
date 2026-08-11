@@ -1,6 +1,11 @@
 name: ThymeNG
 options:
   bundleIdPrefix: com.fabrizioballiano
+  # An Icon Composer document is a folder. Without this XcodeGen adds the files
+  # inside it one by one, and the icon never reaches actool.
+  fileTypes:
+    icon:
+      file: true
   deploymentTarget:
     macOS: "15.0"
   createIntermediateGroups: true
