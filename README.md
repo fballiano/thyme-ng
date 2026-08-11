@@ -179,6 +179,15 @@ a Shortcuts action all call the same method on `AppModel`.
 - Digits are monospaced, so the menu bar item no longer jumps between two fixed
   widths.
 
+## Sponsorship
+
+`thyme-ng` is free and open source. If it is useful to you, you can support the
+work:
+
+- [GitHub Sponsors](https://github.com/sponsors/fballiano)
+- [Buy Me a Coffee](https://buymeacoffee.com/fballiano)
+- [PayPal](https://paypal.me/fabrizioballiano)
+
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
