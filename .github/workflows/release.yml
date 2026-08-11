@@ -1,0 +1,106 @@
+name: Release
+
+# Push a tag to publish a release:
+#
+#   git tag -a v1.0.0 -m "v1.0.0" && git push origin v1.0.0
+#
+# The workflow builds the universal Release app, packs it into a DMG and
+# attaches the DMG to a new GitHub release.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to build, without the leading v, for example 1.0.0"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-26
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -switch /Applications/Xcode.app
+          xcodebuild -version
+          swift --version
+
+      - name: Read the version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            version="${{ inputs.version }}"
+          else
+            version="${GITHUB_REF_NAME#v}"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Version $version"
+
+      - name: Run the tests
+        run: make test
+
+      - name: Build the disk image
+        run: |
+          make dmg VERSION="${{ steps.version.outputs.version }}" \
+                   BUILD_NUMBER="${{ github.run_number }}"
+
+      - name: Check the disk image
+        id: dmg
+        run: |
+          set -euo pipefail
+          path=$(ls dist/*.dmg)
+          echo "path=$path" >> "$GITHUB_OUTPUT"
+          echo "sha256=$(shasum -a 256 "$path" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          # The app must be a universal binary and must carry a signature.
+          hdiutil attach "$path" -nobrowse -mountpoint /tmp/thyme-ng-dmg
+          lipo -archs /tmp/thyme-ng-dmg/thyme-ng.app/Contents/MacOS/thyme-ng
+          codesign --verify --verbose /tmp/thyme-ng-dmg/thyme-ng.app
+          hdiutil detach /tmp/thyme-ng-dmg
+
+      - name: Write the release notes
+        run: |
+          cat > /tmp/notes.md <<'NOTES'
+          ## Install
+
+          1. Download the DMG below.
+          2. Open it and drag **thyme-ng** into **Applications**.
+          3. The first launch shows a warning, because the app is not signed with
+             an Apple Developer ID. Open **System Settings → Privacy & Security**
+             and select **Open Anyway**.
+
+          A terminal does the same thing:
+
+          ```bash
+          xattr -dr com.apple.quarantine /Applications/thyme-ng.app
+          open /Applications/thyme-ng.app
+          ```
+
+          The app has no dock icon. It appears in the menu bar.
+
+          ## Requirements
+
+          macOS 15.0 or later. Apple silicon and Intel (universal binary).
+
+          NOTES
+          printf 'SHA-256 of the DMG: `%s`\n' "${{ steps.dmg.outputs.sha256 }}" >> /tmp/notes.md
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${{ steps.version.outputs.version }}" \
+            "${{ steps.dmg.outputs.path }}" \
+            --title "thyme-ng ${{ steps.version.outputs.version }}" \
+            --notes-file /tmp/notes.md \
+            --generate-notes \
+            --target "${{ github.sha }}"

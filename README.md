@@ -38,6 +38,22 @@ implementation.
 | Hardware | Apple silicon and Intel (universal binary) |
 | Xcode | 26 or later, to build it |
 
+## Download
+
+Get the DMG from the [latest release](https://github.com/fballiano/thyme-ng/releases/latest).
+Open it and drag **thyme-ng** into **Applications**.
+
+The app is signed ad hoc, not with an Apple Developer ID. macOS therefore blocks
+the first launch. Open **System Settings → Privacy & Security** and select
+**Open Anyway**. A terminal does the same thing:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/thyme-ng.app
+open /Applications/thyme-ng.app
+```
+
+The app has no dock icon. It appears in the menu bar.
+
 ## Build and install
 
 ```bash
@@ -51,6 +67,7 @@ Other targets:
 make build       # build only
 make test        # run the unit tests
 make run         # build, then launch
+make dmg         # build the Release app and pack it into ./dist/*.dmg
 make generate    # rebuild ThymeNG.xcodeproj from project.yml (needs xcodegen)
 make uninstall   # remove /Applications/thyme-ng.app
 ```

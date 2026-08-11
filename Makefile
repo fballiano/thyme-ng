@@ -6,19 +6,37 @@
 #   make test       run the unit tests
 #   make run        build, then launch the app
 #   make install    copy the app into /Applications
-#   make clean      remove ./build
+#   make dmg        build the Release app and pack it into ./dist/*.dmg
+#   make clean      remove ./build and ./dist
+#
+# Set VERSION to stamp a version into the build, for example:
+#
+#   make dmg VERSION=1.0.0 BUILD_NUMBER=7
 
 SHELL          := /bin/bash
 PROJECT        := ThymeNG.xcodeproj
 SCHEME         := ThymeNG
 APP            := thyme-ng.app
 BUILD_DIR      := $(CURDIR)/build
+DIST_DIR       := $(CURDIR)/dist
 APP_RELEASE    := $(BUILD_DIR)/Build/Products/Release/$(APP)
 APP_DEBUG      := $(BUILD_DIR)/Build/Products/Debug/$(APP)
 XCODEBUILD     := xcodebuild -project $(PROJECT) -scheme $(SCHEME) -derivedDataPath $(BUILD_DIR)
 QUIET          := -quiet
+PLIST_BUDDY    := /usr/libexec/PlistBuddy
 
-.PHONY: all generate build debug test run install uninstall clean
+# VERSION and BUILD_NUMBER are empty by default, so a plain build keeps the
+# values from project.yml. The release workflow passes the values of the tag.
+VERSION        ?=
+BUILD_NUMBER   ?=
+ifneq ($(VERSION),)
+VERSION_FLAGS  += MARKETING_VERSION=$(VERSION)
+endif
+ifneq ($(BUILD_NUMBER),)
+VERSION_FLAGS  += CURRENT_PROJECT_VERSION=$(BUILD_NUMBER)
+endif
+
+.PHONY: all generate build debug test run install uninstall dmg clean
 
 all: build
 
@@ -26,7 +44,7 @@ generate:
 	xcodegen generate
 
 build:
-	$(XCODEBUILD) -configuration Release $(QUIET) build
+	$(XCODEBUILD) -configuration Release $(VERSION_FLAGS) $(QUIET) build
 	@echo "Built $(APP_RELEASE)"
 
 debug:
@@ -57,5 +75,21 @@ uninstall:
 	@rm -rf /Applications/$(APP)
 	@echo "Removed /Applications/$(APP)"
 
+# A disk image with the app and a link to /Applications. The version comes from
+# the built app, so the name of the file always matches the bundle.
+dmg: build
+	@set -euo pipefail; \
+	version=$$($(PLIST_BUDDY) -c "Print CFBundleShortVersionString" "$(APP_RELEASE)/Contents/Info.plist"); \
+	staging="$(DIST_DIR)/dmg"; \
+	image="$(DIST_DIR)/thyme-ng-$$version.dmg"; \
+	rm -rf "$$staging" "$$image"; \
+	mkdir -p "$$staging"; \
+	cp -R "$(APP_RELEASE)" "$$staging/"; \
+	ln -s /Applications "$$staging/Applications"; \
+	hdiutil create -volname "thyme-ng $$version" -srcfolder "$$staging" \
+		-ov -format UDZO -quiet "$$image"; \
+	rm -rf "$$staging"; \
+	echo "Built $$image"
+
 clean:
-	@rm -rf $(BUILD_DIR)
+	@rm -rf $(BUILD_DIR) $(DIST_DIR)

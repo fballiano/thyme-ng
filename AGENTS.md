@@ -19,8 +19,9 @@ make debug       # build the Debug app into ./build
 make test        # run the unit tests
 make run         # build, then launch the app
 make install     # copy the app into /Applications
+make dmg         # build the Release app and pack it into ./dist/*.dmg
 make generate    # rebuild ThymeNG.xcodeproj from project.yml (needs xcodegen)
-make clean       # remove ./build
+make clean       # remove ./build and ./dist
 ```
 
 To run one test suite or one test:
@@ -38,6 +39,25 @@ Parallel testing must stay off. The test bundle loads into the real application,
 so a parallel run launches one copy of the application for each test worker.
 
 To redraw the application icon: `swift Tools/make-icon.swift`.
+
+## Releases
+
+`.github/workflows/release.yml` publishes a release. A tag that starts with `v`
+starts it:
+
+```bash
+git tag -a v1.0.0 -m "v1.0.0"
+git push origin v1.0.0
+```
+
+The workflow runs the tests, calls `make dmg`, and attaches the disk image to a
+new GitHub release. It passes the version of the tag as `MARKETING_VERSION` and
+the run number as `CURRENT_PROJECT_VERSION`, so `project.yml` does not need a
+change for each release.
+
+The application is signed ad hoc. There is no Apple Developer ID and no
+notarization, so macOS blocks the first launch. The release notes and the README
+explain the two ways to open it.
 
 ## Project file
 
