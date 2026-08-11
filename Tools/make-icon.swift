@@ -10,8 +10,10 @@
 // Its 24 x 24 outline path is redrawn here with Core Graphics, in white, on a
 // green squircle.
 //
-// The menu bar uses the SF Symbol "stopwatch" instead. Apple does not allow an
-// SF Symbol to be used as an application icon, which is why the two differ.
+// The menu bar draws the same path from
+// Sources/ThymeNG/Views/StopwatchGlyph.swift. This script runs on its own,
+// outside the application, so it cannot import that file. Change the two
+// together.
 
 import AppKit
 import Foundation
@@ -94,7 +96,9 @@ func drawIcon(pixels: Int) -> NSBitmapImageRep {
 
     let glyph = tablerStopwatchPath()
     glyph.transform(using: transform)
-    glyph.lineWidth = 2 * scale // Tabler draws with stroke-width 2.
+    // Tabler ships the icon at stroke-width 2. 1.5 is lighter and matches
+    // `StopwatchGlyph.strokeWidth`, which the menu bar uses.
+    glyph.lineWidth = 1.5 * scale
     glyph.lineCapStyle = .round // stroke-linecap="round"
     glyph.lineJoinStyle = .round // stroke-linejoin="round"
 

@@ -40,6 +40,12 @@ so a parallel run launches one copy of the application for each test worker.
 
 To redraw the application icon: `swift Tools/make-icon.swift`.
 
+The application icon and the menu bar icon are the same Tabler `stopwatch`
+outline at stroke width 1.5. The path exists twice, because the icon script runs
+outside the application and cannot import its code: in
+`Sources/ThymeNG/Views/StopwatchGlyph.swift` and in `Tools/make-icon.swift`.
+Change the two together.
+
 ## Releases
 
 `.github/workflows/release.yml` publishes a release. A tag that starts with `v`

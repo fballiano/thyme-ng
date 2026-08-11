@@ -20,20 +20,22 @@ Fetched by Swift Package Manager, not vendored.
 
 ## Tabler Icons
 
-The application icon redraws the `stopwatch` outline from Tabler Icons. The
-24 x 24 path is reproduced in `Tools/make-icon.swift`.
+The application icon and the menu bar icon redraw the `stopwatch` outline from
+Tabler Icons, at stroke width 1.5. The 24 x 24 path is reproduced twice: in
+`Sources/ThymeNG/Views/StopwatchGlyph.swift` for the menu bar, and in
+`Tools/make-icon.swift` for the application icon.
 
 - Source: https://tabler.io/icons
 - Licence: MIT, Copyright (c) 2020-2026 Paweł Kuna
 
 ## SF Symbols
 
-The menu bar uses the `stopwatch` symbol from SF Symbols, which ships with
-macOS. It is drawn at run time by the system and is not redistributed with this
-application.
+The settings tabs use the `gearshape` and `keyboard` symbols from SF Symbols,
+which ships with macOS. They are drawn at run time by the system and are not
+redistributed with this application.
 
 Apple's licence does not allow an SF Symbol to be used as an application icon,
-which is why the application icon comes from Tabler Icons instead.
+which is why the two stopwatch icons come from Tabler Icons instead.
 
 - Source: Apple SF Symbols, https://developer.apple.com/sf-symbols/
 - Licence: Apple SF Symbols licence agreement

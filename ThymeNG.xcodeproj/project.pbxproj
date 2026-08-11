@@ -19,6 +19,7 @@
 		65ED1325197AE0A57183C263 /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389FB65F66A9FDBB62E5048A /* SettingsWindowController.swift */; };
 		6C7D45D10AE99E732B407D79 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2B7A9D07E6E59195B17EE /* SettingsView.swift */; };
 		6DBD767767DBA544FFFE9EB7 /* PreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3AF8C8289A278811C581E /* PreferencesTests.swift */; };
+		700E5A6C9F6D3F3E898BE10E /* StopwatchGlyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25EE316E3AABA11BF23AE8C /* StopwatchGlyph.swift */; };
 		7E9FC027F845243F418793C7 /* TagPromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */; };
 		7FCD56608A723099B1ED6B4D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234B271DFCF611019005273 /* Session.swift */; };
 		926C81D8E15E6A2BF499F67A /* SessionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871728355C68822D38FDC2F1 /* SessionStoreTests.swift */; };
@@ -68,6 +69,7 @@
 		9F8F22942CBFE241F576D508 /* RuntimeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeEnvironment.swift; sourceTree = "<group>"; };
 		B091D3FF8B5EAECEC936B80A /* HotKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeys.swift; sourceTree = "<group>"; };
 		BB7C041ECA873A7C07DDF307 /* ThymeNGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThymeNGApp.swift; sourceTree = "<group>"; };
+		D25EE316E3AABA11BF23AE8C /* StopwatchGlyph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchGlyph.swift; sourceTree = "<group>"; };
 		E1D3AF8C8289A278811C581E /* PreferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTests.swift; sourceTree = "<group>"; };
 		E246EF75538D735764F98357 /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		E2B7C5760C77AA88AF3F7AD9 /* ScriptCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptCommands.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				8CB53F1AACA167EDCB2D3972 /* MenuContent.swift */,
 				91F2B7A9D07E6E59195B17EE /* SettingsView.swift */,
 				389FB65F66A9FDBB62E5048A /* SettingsWindowController.swift */,
+				D25EE316E3AABA11BF23AE8C /* StopwatchGlyph.swift */,
 				2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */,
 				3E4567D52DABFB3301003C6B /* TagPromptView.swift */,
 			);
@@ -297,6 +300,7 @@
 				6C7D45D10AE99E732B407D79 /* SettingsView.swift in Sources */,
 				65ED1325197AE0A57183C263 /* SettingsWindowController.swift in Sources */,
 				1C5E9DA94619D40341039E4D /* Stopwatch.swift in Sources */,
+				700E5A6C9F6D3F3E898BE10E /* StopwatchGlyph.swift in Sources */,
 				3F9253F3311506F43CB05986 /* SystemEvents.swift in Sources */,
 				7E9FC027F845243F418793C7 /* TagPromptController.swift in Sources */,
 				945E58792F75956A8BCCE2D4 /* TagPromptView.swift in Sources */,
