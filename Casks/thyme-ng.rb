@@ -1,6 +1,6 @@
 cask "thyme-ng" do
-  version "1.0.2"
-  sha256 "4e81b429869fd880da8060a23a7861df734e3663dd139df8a4e67f3c998be659"
+  version "1.0.4"
+  sha256 "d50ebfc1da1a74d1f7a9daa70bb0e847b5515d8db23e0ca4e08f93af4b62d7f2"
 
   url "https://github.com/fballiano/thyme-ng/releases/download/v#{version}/thyme-ng-#{version}.dmg"
   name "thyme-ng"
