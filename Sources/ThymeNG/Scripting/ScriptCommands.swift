@@ -14,7 +14,7 @@ import Foundation
 @objc(StartCommand)
 final class StartCommand: NSScriptCommand {
     override func performDefaultImplementation() -> Any? {
-        MainActor.assumeIsolated { AppModel.shared.start(notify: true) }
+        MainActor.assumeIsolated { AppModel.shared.start() }
         return nil
     }
 }
@@ -22,7 +22,7 @@ final class StartCommand: NSScriptCommand {
 @objc(PauseCommand)
 final class PauseCommand: NSScriptCommand {
     override func performDefaultImplementation() -> Any? {
-        MainActor.assumeIsolated { AppModel.shared.pause(notify: true) }
+        MainActor.assumeIsolated { AppModel.shared.pause() }
         return nil
     }
 }
@@ -30,7 +30,7 @@ final class PauseCommand: NSScriptCommand {
 @objc(StopCommand)
 final class StopCommand: NSScriptCommand {
     override func performDefaultImplementation() -> Any? {
-        MainActor.assumeIsolated { AppModel.shared.finish(notify: true) }
+        MainActor.assumeIsolated { AppModel.shared.finish() }
         return nil
     }
 }
@@ -38,7 +38,7 @@ final class StopCommand: NSScriptCommand {
 @objc(ToggleCommand)
 final class ToggleCommand: NSScriptCommand {
     override func performDefaultImplementation() -> Any? {
-        MainActor.assumeIsolated { AppModel.shared.toggle(notify: true) }
+        MainActor.assumeIsolated { AppModel.shared.toggle() }
         return nil
     }
 }
@@ -46,7 +46,7 @@ final class ToggleCommand: NSScriptCommand {
 @objc(RestartCommand)
 final class RestartCommand: NSScriptCommand {
     override func performDefaultImplementation() -> Any? {
-        MainActor.assumeIsolated { AppModel.shared.restart(notify: true) }
+        MainActor.assumeIsolated { AppModel.shared.restart() }
         return nil
     }
 }

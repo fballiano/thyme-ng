@@ -83,7 +83,6 @@ Open **Preferences…** from the menu, or press <kbd>⌘</kbd><kbd>,</kbd>.
 | Pause during sleep | on | Pauses when the Mac sleeps, continues on wake. |
 | Pause during screensaver or screen lock | on | Same, for the screen. |
 | Ask for a tag when a session finishes | off | Shows a small window to label the session. |
-| Show notifications | on | A banner on start, pause and stop. |
 | Delete old sessions automatically | on, keep 10 | Keeps only the newest N sessions. |
 | Start thyme-ng at login | **on** | Registers a login item through `SMAppService`. The first launch switches it on. A later change by you stays. |
 
@@ -177,7 +176,6 @@ A push of a tag `v*` builds the DMG and publishes a release from GitHub Actions.
 | Language | Swift 6, strict concurrency |
 | Interface | SwiftUI `MenuBarExtra` |
 | Storage | SwiftData |
-| Notifications | `UserNotifications` |
 | Global hot keys | [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) |
 | Login item | `SMAppService` |
 | Tests | Swift Testing |
@@ -193,7 +191,6 @@ Sources/ThymeNG/
 ├── Preferences.swift       the settings
 ├── HotKeys.swift           the global shortcut names
 ├── SystemEvents.swift      sleep, wake, screensaver, lock
-├── Notifier.swift          banners
 ├── LoginItem.swift         start at login
 ├── TimeFormatter.swift     MM:SS and HH:MM:SS
 ├── Views/                  the menu, the settings, the tag prompt

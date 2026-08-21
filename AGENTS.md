@@ -189,7 +189,6 @@ test run. `RuntimeEnvironment.isRunningTests` guards the side effects:
 
 - `AppModel.bootstrap()` does nothing, so no hot keys and no system events.
 - `SessionStore` uses an in-memory container, so the live database is safe.
-- `Notifier` does not ask for notification permission.
 - `LoginItem` does not call `SMAppService`.
 
 The app starts at login by default. `AppModel.applyDefaultLoginItem()` registers

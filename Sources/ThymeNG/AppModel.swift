@@ -26,7 +26,6 @@ final class AppModel {
     private(set) var storeError: String?
 
     @ObservationIgnored private let store: SessionStore
-    @ObservationIgnored private let notifier = Notifier()
     @ObservationIgnored private let tagPrompt = TagPromptController()
     @ObservationIgnored private let settingsWindow = SettingsWindowController()
     @ObservationIgnored private var systemEvents: SystemEvents?
@@ -65,7 +64,7 @@ final class AppModel {
 
     // MARK: - Launch
 
-    /// Wires the hot keys, the system events and the notifications.
+    /// Wires the hot keys and the system events.
     func bootstrap() {
         guard !didBootstrap, !RuntimeEnvironment.isRunningTests else { return }
         didBootstrap = true
@@ -74,7 +73,6 @@ final class AppModel {
         reloadSessions()
 
         applyDefaultLoginItem()
-        notifier.prepare()
         registerHotKeys()
         registerSystemEvents()
         registerTerminationHandler()
@@ -125,13 +123,13 @@ final class AppModel {
 
     private func registerHotKeys() {
         KeyboardShortcuts.onKeyDown(for: .toggle) { [weak self] in
-            MainActor.assumeIsolated { self?.toggle(notify: true) }
+            MainActor.assumeIsolated { self?.toggle() }
         }
         KeyboardShortcuts.onKeyDown(for: .restart) { [weak self] in
-            MainActor.assumeIsolated { self?.restart(notify: true) }
+            MainActor.assumeIsolated { self?.restart() }
         }
         KeyboardShortcuts.onKeyDown(for: .finish) { [weak self] in
-            MainActor.assumeIsolated { self?.finish(notify: true) }
+            MainActor.assumeIsolated { self?.finish() }
         }
     }
 
@@ -148,49 +146,35 @@ final class AppModel {
 
     // MARK: - Commands
 
-    func start(notify: Bool = false) {
+    func start() {
         guard !stopwatch.isRunning else { return }
 
         stopwatch.start()
-
-        if notify {
-            notifier.post("Started", enabled: preferences.showNotifications)
-        }
     }
 
-    func pause(notify: Bool = false) {
+    func pause() {
         guard stopwatch.isRunning else { return }
 
         stopwatch.pause()
-
-        if notify {
-            notifier.post("Paused at \(TimeFormatter.clock(stopwatch.elapsed))",
-                          enabled: preferences.showNotifications)
-        }
     }
 
-    func toggle(notify: Bool = false) {
-        stopwatch.isRunning ? pause(notify: notify) : start(notify: notify)
+    func toggle() {
+        stopwatch.isRunning ? pause() : start()
     }
 
     /// Saves the running session and starts a new one.
-    func restart(notify: Bool = false) {
+    func restart() {
         guard !stopwatch.isStopped else { return }
 
-        finish(notify: notify)
-        start(notify: notify)
+        finish()
+        start()
     }
 
     /// Saves the running session and returns the stopwatch to zero.
-    func finish(notify: Bool = false) {
+    func finish() {
         guard !stopwatch.isStopped else { return }
 
         let duration = stopwatch.stop()
-
-        if notify {
-            notifier.post("Stopped at \(TimeFormatter.clock(duration))",
-                          enabled: preferences.showNotifications)
-        }
 
         guard duration >= SessionStore.minimumDuration else { return }
 

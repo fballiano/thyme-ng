@@ -13,7 +13,7 @@ struct StartTimerIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        AppModel.shared.start(notify: true)
+        AppModel.shared.start()
         return .result()
     }
 }
@@ -25,7 +25,7 @@ struct PauseTimerIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        AppModel.shared.pause(notify: true)
+        AppModel.shared.pause()
         return .result()
     }
 }
@@ -37,7 +37,7 @@ struct ToggleTimerIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        AppModel.shared.toggle(notify: true)
+        AppModel.shared.toggle()
         return .result()
     }
 }
@@ -49,7 +49,7 @@ struct FinishTimerIntent: AppIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        AppModel.shared.finish(notify: true)
+        AppModel.shared.finish()
         return .result()
     }
 }

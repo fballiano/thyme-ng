@@ -19,7 +19,6 @@ struct PreferencesTests {
         #expect(preferences.pauseOnSleep)
         #expect(preferences.pauseOnScreensaver)
         #expect(!preferences.askForTagOnFinish)
-        #expect(preferences.showNotifications)
         #expect(preferences.maxStoredSessions == 10)
 
         // The app registers the login item at the first launch, so the flag

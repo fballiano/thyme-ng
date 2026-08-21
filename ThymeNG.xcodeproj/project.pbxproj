@@ -24,7 +24,6 @@
 		7FCD56608A723099B1ED6B4D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234B271DFCF611019005273 /* Session.swift */; };
 		926C81D8E15E6A2BF499F67A /* SessionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871728355C68822D38FDC2F1 /* SessionStoreTests.swift */; };
 		945E58792F75956A8BCCE2D4 /* TagPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4567D52DABFB3301003C6B /* TagPromptView.swift */; };
-		95EAA428DB14A1C060CC28A0 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06420CA284ABE127568F9AE7 /* Notifier.swift */; };
 		981F1DE06BAA86FCE4652D19 /* HotKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B091D3FF8B5EAECEC936B80A /* HotKeys.swift */; };
 		9A3FF1F93FAE00A0AE200F94 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 60FED1E76A91D77BF70A4D48 /* KeyboardShortcuts */; };
 		9F1BB23F47F3D1DBCE8EFD7C /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = A2C0A2472A8CB58E2223DD97 /* AppIcon.icon */; };
@@ -48,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06420CA284ABE127568F9AE7 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		1E2EF8AE1C923077F095565D /* ThymeIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThymeIntents.swift; sourceTree = "<group>"; };
 		2F69BBD5CB8115465BD3AA7B /* TagPromptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPromptController.swift; sourceTree = "<group>"; };
 		34217A584B9403287649F397 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				683D58A4175487A1FAB155FE /* AppModel.swift */,
 				B091D3FF8B5EAECEC936B80A /* HotKeys.swift */,
 				FB5D8F57821236811506786D /* LoginItem.swift */,
-				06420CA284ABE127568F9AE7 /* Notifier.swift */,
 				FE2099166D69301EA7ADCDB0 /* Preferences.swift */,
 				9F8F22942CBFE241F576D508 /* RuntimeEnvironment.swift */,
 				9234B271DFCF611019005273 /* Session.swift */,
@@ -291,7 +288,6 @@
 				F642745AEF8514C8FFD6A923 /* LoginItem.swift in Sources */,
 				1742667C87AB33F3D5B6F6EA /* MenuBarLabel.swift in Sources */,
 				078958ED0840684E2E23EAA8 /* MenuContent.swift in Sources */,
-				95EAA428DB14A1C060CC28A0 /* Notifier.swift in Sources */,
 				1213499E1BCA5081F4B54C18 /* Preferences.swift in Sources */,
 				0192AB8B894077297AC9C486 /* RuntimeEnvironment.swift in Sources */,
 				0B1DC59DDEE99579E42C1628 /* ScriptCommands.swift in Sources */,

@@ -28,7 +28,6 @@ private struct GeneralSettingsView: View {
                 Toggle("Pause during sleep", isOn: $preferences.pauseOnSleep)
                 Toggle("Pause during screensaver or screen lock", isOn: $preferences.pauseOnScreensaver)
                 Toggle("Ask for a tag when a session finishes", isOn: $preferences.askForTagOnFinish)
-                Toggle("Show notifications", isOn: $preferences.showNotifications)
             }
 
             Section("Sessions") {

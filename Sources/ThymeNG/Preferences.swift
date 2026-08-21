@@ -9,7 +9,6 @@ final class Preferences {
         static let pauseOnSleep = "pauseOnSleep"
         static let pauseOnScreensaver = "pauseOnScreensaver"
         static let askForTagOnFinish = "askForTagOnFinish"
-        static let showNotifications = "showNotifications"
         static let maxStoredSessions = "maxStoredSessions"
         static let appliedDefaultLoginItem = "appliedDefaultLoginItem"
     }
@@ -30,7 +29,6 @@ final class Preferences {
             Key.pauseOnSleep: true,
             Key.pauseOnScreensaver: true,
             Key.askForTagOnFinish: false,
-            Key.showNotifications: true,
             Key.maxStoredSessions: Self.defaultSessionLimit,
             Key.appliedDefaultLoginItem: false,
         ])
@@ -38,7 +36,6 @@ final class Preferences {
         pauseOnSleep = defaults.bool(forKey: Key.pauseOnSleep)
         pauseOnScreensaver = defaults.bool(forKey: Key.pauseOnScreensaver)
         askForTagOnFinish = defaults.bool(forKey: Key.askForTagOnFinish)
-        showNotifications = defaults.bool(forKey: Key.showNotifications)
         storedMaxSessions = max(0, defaults.integer(forKey: Key.maxStoredSessions))
         appliedDefaultLoginItem = defaults.bool(forKey: Key.appliedDefaultLoginItem)
     }
@@ -56,11 +53,6 @@ final class Preferences {
     /// Ask for a tag each time a session finishes.
     var askForTagOnFinish: Bool {
         didSet { defaults.set(askForTagOnFinish, forKey: Key.askForTagOnFinish) }
-    }
-
-    /// Show a notification on start, pause and stop.
-    var showNotifications: Bool {
-        didSet { defaults.set(showNotifications, forKey: Key.showNotifications) }
     }
 
     /// `true` after the app has registered the login item once.
