@@ -11,6 +11,7 @@ final class Preferences {
         static let askForTagOnFinish = "askForTagOnFinish"
         static let showNotifications = "showNotifications"
         static let maxStoredSessions = "maxStoredSessions"
+        static let appliedDefaultLoginItem = "appliedDefaultLoginItem"
     }
 
     /// The value of `maxStoredSessions` that means "keep every session".
@@ -31,6 +32,7 @@ final class Preferences {
             Key.askForTagOnFinish: false,
             Key.showNotifications: true,
             Key.maxStoredSessions: Self.defaultSessionLimit,
+            Key.appliedDefaultLoginItem: false,
         ])
 
         pauseOnSleep = defaults.bool(forKey: Key.pauseOnSleep)
@@ -38,6 +40,7 @@ final class Preferences {
         askForTagOnFinish = defaults.bool(forKey: Key.askForTagOnFinish)
         showNotifications = defaults.bool(forKey: Key.showNotifications)
         storedMaxSessions = max(0, defaults.integer(forKey: Key.maxStoredSessions))
+        appliedDefaultLoginItem = defaults.bool(forKey: Key.appliedDefaultLoginItem)
     }
 
     /// Pause when the Mac goes to sleep, continue when it wakes.
@@ -58,6 +61,16 @@ final class Preferences {
     /// Show a notification on start, pause and stop.
     var showNotifications: Bool {
         didSet { defaults.set(showNotifications, forKey: Key.showNotifications) }
+    }
+
+    /// `true` after the app has registered the login item once.
+    ///
+    /// The app starts at login by default, so the first launch registers the
+    /// login item. This flag stops it from doing that a second time. Without it
+    /// the app would switch the setting back on at every launch, and a user who
+    /// turned it off could never keep it off.
+    var appliedDefaultLoginItem: Bool {
+        didSet { defaults.set(appliedDefaultLoginItem, forKey: Key.appliedDefaultLoginItem) }
     }
 
     /// The backing value. Never assign to a property inside its own `didSet`:

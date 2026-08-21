@@ -85,7 +85,7 @@ Open **Preferences…** from the menu, or press <kbd>⌘</kbd><kbd>,</kbd>.
 | Ask for a tag when a session finishes | off | Shows a small window to label the session. |
 | Show notifications | on | A banner on start, pause and stop. |
 | Delete old sessions automatically | on, keep 10 | Keeps only the newest N sessions. |
-| Start thyme-ng at login | off | Registers a login item through `SMAppService`. |
+| Start thyme-ng at login | **on** | Registers a login item through `SMAppService`. The first launch switches it on. A later change by you stays. |
 
 The **Shortcuts** tab holds the three global hot keys: Start / Pause, Restart and
 Finish. No shortcut is set until you record one.

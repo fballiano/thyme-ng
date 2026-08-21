@@ -21,6 +21,20 @@ struct PreferencesTests {
         #expect(!preferences.askForTagOnFinish)
         #expect(preferences.showNotifications)
         #expect(preferences.maxStoredSessions == 10)
+
+        // The app registers the login item at the first launch, so the flag
+        // starts false and becomes true once.
+        #expect(!preferences.appliedDefaultLoginItem)
+    }
+
+    @Test("The flag of the login item is written once and stays")
+    func appliedDefaultLoginItem() {
+        let defaults = makeDefaults()
+        let preferences = Preferences(defaults: defaults)
+
+        preferences.appliedDefaultLoginItem = true
+
+        #expect(Preferences(defaults: defaults).appliedDefaultLoginItem)
     }
 
     @Test("A change is written to the store")
