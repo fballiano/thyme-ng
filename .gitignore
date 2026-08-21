@@ -16,3 +16,6 @@ Packages/
 
 # macOS
 .DS_Store
+
+# JetBrains IDEs
+.idea/
