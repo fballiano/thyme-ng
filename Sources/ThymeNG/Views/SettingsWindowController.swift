@@ -24,6 +24,15 @@ final class SettingsWindowController {
 
         NSApp.activate()
         window.makeKeyAndOrderFront(nil)
+
+        // `activate()` is a request. macOS refuses it while another
+        // application is in front, and `makeKeyAndOrderFront` then puts the
+        // window in front of the windows of this app only. A window that
+        // already existed therefore stayed behind the front application, and
+        // the command looked dead: the app has no dock icon, so the user had
+        // no other way to reach the window. `orderFrontRegardless` puts it
+        // above the other applications as well.
+        window.orderFrontRegardless()
     }
 
     private func makeWindow(model: AppModel) -> NSWindow {
