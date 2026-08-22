@@ -34,6 +34,7 @@
 <tr><td><b>Your data, exported</b></td><td>One click writes every session to JSON.</td></tr>
 <tr><td><b>Tidy by itself</b></td><td>Old sessions go away, so the list stays short.</td></tr>
 <tr><td><b>Light and dark</b></td><td>The icon follows the system, in the menu bar and in the Finder.</td></tr>
+<tr><td><b>Six languages</b></td><td>English, Italian, French, Spanish, Portuguese (Brazil) and German.</td></tr>
 </table>
 
 ## Install
@@ -88,6 +89,13 @@ Open **Preferences…** from the menu, or press <kbd>⌘</kbd><kbd>,</kbd>.
 
 The **Shortcuts** tab holds the three global hot keys: Start / Pause, Restart and
 Finish. No shortcut is set until you record one.
+
+## Languages
+
+The application speaks English, Italian, French, Spanish, Portuguese (Brazil)
+and German. It follows the language of macOS. To read it in one other language,
+open **System Settings → General → Language & Region**, add the language to
+**Applications**, and select **thyme-ng**.
 
 ## Automation
 

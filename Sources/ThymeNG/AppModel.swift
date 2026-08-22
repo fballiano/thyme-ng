@@ -186,10 +186,13 @@ final class AppModel {
     }
 
     /// The title of the first menu command, as in the original app.
+    ///
+    /// The title is translated here, not in the view. A `Button` that takes a
+    /// `String` shows the string as it is, so the value must arrive translated.
     var primaryCommandTitle: String {
-        if stopwatch.isRunning { return "Pause" }
-        if stopwatch.isPaused { return "Continue" }
-        return "Start"
+        if stopwatch.isRunning { return String(localized: "Pause") }
+        if stopwatch.isPaused { return String(localized: "Continue") }
+        return String(localized: "Start")
     }
 
     // MARK: - Sessions
@@ -228,7 +231,7 @@ final class AppModel {
         panel.allowedContentTypes = [.json]
         panel.canCreateDirectories = true
         panel.nameFieldStringValue = SessionStore.exportFileName()
-        panel.title = "Export sessions"
+        panel.title = String(localized: "Export sessions")
 
         NSApp.activate()
 

@@ -29,6 +29,7 @@
 		9F1BB23F47F3D1DBCE8EFD7C /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = A2C0A2472A8CB58E2223DD97 /* AppIcon.icon */; };
 		AB1531230198644754A5B92F /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246EF75538D735764F98357 /* StopwatchTests.swift */; };
 		B023579933933E709F2FC21B /* ThymeIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EF8AE1C923077F095565D /* ThymeIntents.swift */; };
+		B0A0D269DED614684D1068CD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 88EF582BB7BFCDD0EF28AA34 /* Localizable.xcstrings */; };
 		BD891F9B3E8E27686433C2E9 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD582D0710DBD3928D0D7FA /* TimeFormatter.swift */; };
 		D8F39B0945F748E88FD730F8 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CF1F307F33F75A0E6319F /* SessionStore.swift */; };
 		E27E2006D97612266959ED62 /* ThymeNGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C041ECA873A7C07DDF307 /* ThymeNGApp.swift */; };
@@ -60,6 +61,7 @@
 		714BED4B44B969C889AEC8E5 /* ThymeNGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThymeNGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		81ECEEF5ECC1DDA4EC623C1A /* SystemEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEvents.swift; sourceTree = "<group>"; };
 		871728355C68822D38FDC2F1 /* SessionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStoreTests.swift; sourceTree = "<group>"; };
+		88EF582BB7BFCDD0EF28AA34 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		8CB53F1AACA167EDCB2D3972 /* MenuContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContent.swift; sourceTree = "<group>"; };
 		91F2B7A9D07E6E59195B17EE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9234B271DFCF611019005273 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C0A2472A8CB58E2223DD97 /* AppIcon.icon */,
+				88EF582BB7BFCDD0EF28AA34 /* Localizable.xcstrings */,
 				47F5259FC11D4692129E4432 /* thyme-ng.sdef */,
 			);
 			path = Resources;
@@ -248,7 +251,12 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
+				de,
 				en,
+				es,
+				fr,
+				it,
+				"pt-BR",
 			);
 			mainGroup = 47DE3956E46E2B23AFDC75E8;
 			minimizedProjectReferenceProxies = 1;
@@ -272,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1BB23F47F3D1DBCE8EFD7C /* AppIcon.icon in Resources */,
+				B0A0D269DED614684D1068CD /* Localizable.xcstrings in Resources */,
 				E5EEAFD0DB91F716DC33BF01 /* thyme-ng.sdef in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +394,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
@@ -491,6 +501,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;

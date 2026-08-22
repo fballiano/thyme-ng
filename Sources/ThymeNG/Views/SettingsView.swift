@@ -61,9 +61,12 @@ private struct ShortcutsSettingsView: View {
     var body: some View {
         Form {
             Section {
-                KeyboardShortcuts.Recorder("Start / Pause:", name: .toggle)
-                KeyboardShortcuts.Recorder("Restart:", name: .restart)
-                KeyboardShortcuts.Recorder("Finish:", name: .finish)
+                // `Recorder` has one initialiser for `String` and one for
+                // `LocalizedStringKey`. A plain literal selects `String`, and
+                // that title is never translated, so the type is written out.
+                KeyboardShortcuts.Recorder(LocalizedStringKey("Start / Pause:"), name: .toggle)
+                KeyboardShortcuts.Recorder(LocalizedStringKey("Restart:"), name: .restart)
+                KeyboardShortcuts.Recorder(LocalizedStringKey("Finish:"), name: .finish)
             } footer: {
                 Text("These shortcuts work in every application.")
                     .font(.callout)

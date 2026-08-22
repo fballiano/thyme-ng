@@ -74,6 +74,50 @@ To look at the result without a build:
   --platform macOS --rendition Dark --width 512 --height 512 --scale 1
 ```
 
+## Translations
+
+`Resources/Localizable.xcstrings` is a String Catalog. It holds every text the
+user reads, in English, Italian, French, Spanish, Portuguese (Brazil) and
+German. English is the source language, so an English entry exists only where
+the string has a plural form.
+
+A view writes the English text as a literal. SwiftUI reads the literal as a key
+and finds the translation:
+
+```swift
+Button("Restart") { model.restart() }
+```
+
+Code outside a view builds the text with `String(localized:)`, because a plain
+`String` reaches the interface as it is:
+
+```swift
+panel.title = String(localized: "Export sessions")
+```
+
+`KeyboardShortcuts.Recorder` has one initialiser for `String` and one for
+`LocalizedStringKey`. A plain literal selects `String`, and that title stays
+English, so `SettingsView` writes the type: `Recorder(LocalizedStringKey("…"))`.
+
+To add a language, add the code to each entry of the catalog. XcodeGen reads the
+codes out of the catalog and writes `knownRegions`, so `make generate` needs no
+other change.
+
+The build writes the text of every localizable literal into `.stringsdata`
+files, because `SWIFT_EMIT_LOC_STRINGS` is on. This command lists the keys the
+compiler found, so a key without a translation is easy to see:
+
+```bash
+python3 - <<'EOF'
+import glob, json
+for path in glob.glob("build/Build/Intermediates.noindex/ThymeNG.build/Debug/ThymeNG.build/Objects-normal/arm64/*.stringsdata"):
+    for table, entries in json.load(open(path)).get("tables", {}).items():
+        if table == "Localizable":
+            for entry in entries:
+                print(entry["key"])
+EOF
+```
+
 ## Releases
 
 `.github/workflows/release.yml` publishes a release. A tag that starts with `v`

@@ -26,6 +26,10 @@ settings:
   base:
     SWIFT_VERSION: "6.0"
     SWIFT_STRICT_CONCURRENCY: complete
+    # The compiler writes the text of every localizable literal into
+    # .stringsdata. Xcode reads those files, so the String Catalog editor
+    # shows a new string as soon as the code adds one.
+    SWIFT_EMIT_LOC_STRINGS: YES
     # Universal binary: Apple silicon and Intel.
     ARCHS: $(ARCHS_STANDARD)
     VALID_ARCHS: arm64 x86_64
