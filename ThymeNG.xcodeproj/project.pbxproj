@@ -416,7 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng-tests";
 				PRODUCT_MODULE_NAME = ThymeNGTests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thyme-ng.app/Contents/MacOS/thyme-ng";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timeyard.app/Contents/MacOS/Timeyard";
 			};
 			name = Release;
 		};
@@ -434,7 +434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng-tests";
 				PRODUCT_MODULE_NAME = ThymeNGTests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thyme-ng.app/Contents/MacOS/thyme-ng";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timeyard.app/Contents/MacOS/Timeyard";
 			};
 			name = Debug;
 		};
@@ -526,7 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng";
 				PRODUCT_MODULE_NAME = ThymeNG;
-				PRODUCT_NAME = "thyme-ng";
+				PRODUCT_NAME = Timeyard;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -548,7 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fabrizioballiano.thyme-ng";
 				PRODUCT_MODULE_NAME = ThymeNG;
-				PRODUCT_NAME = "thyme-ng";
+				PRODUCT_NAME = Timeyard;
 				SDKROOT = macosx;
 			};
 			name = Debug;

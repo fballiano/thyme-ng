@@ -38,6 +38,9 @@ final class SessionStore {
     }
 
     /// `~/Library/Application Support/thyme-ng/thyme-ng.store`.
+    ///
+    /// The folder and the file keep the old name of the application on
+    /// purpose. A new name would hide the sessions of an existing install.
     static func storeURL() throws -> URL {
         let directory = try FileManager.default.url(
             for: .applicationSupportDirectory,
@@ -45,10 +48,12 @@ final class SessionStore {
             appropriateFor: nil,
             create: true
         )
+        // The old name, on purpose: existing installs keep their data here.
         .appending(path: "thyme-ng", directoryHint: .isDirectory)
 
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
 
+        // The old name, on purpose: existing installs keep their data here.
         return directory.appending(path: "thyme-ng.store", directoryHint: .notDirectory)
     }
 
@@ -144,9 +149,9 @@ final class SessionStore {
         return try encoder.encode(records())
     }
 
-    /// The suggested file name, for example `thyme-ng-2026-08-11.json`.
+    /// The suggested file name, for example `timeyard-2026-08-11.json`.
     static func exportFileName(for date: Date = .now) -> String {
-        "thyme-ng-\(fileDateFormatter.string(from: date)).json"
+        "timeyard-\(fileDateFormatter.string(from: date)).json"
     }
 
     private static let exportDateFormatter: ISO8601DateFormatter = {

@@ -12,6 +12,8 @@ cask "thyme-ng" do
     strategy :github_latest
   end
 
+  deprecate! date: "2026-11-08", because: "has moved to fballiano/tap/timeyard"
+
   depends_on macos: :sequoia
 
   app "thyme-ng.app"

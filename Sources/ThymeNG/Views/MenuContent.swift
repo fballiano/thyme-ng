@@ -37,11 +37,11 @@ struct MenuContent: View {
         Button("Preferences…") { model.showSettings() }
             .keyboardShortcut(",", modifiers: .command)
 
-        Button("About thyme-ng") { model.showAbout() }
+        Button("About Timeyard") { model.showAbout() }
 
         Divider()
 
-        Button("Quit thyme-ng") { model.quit() }
+        Button("Quit Timeyard") { model.quit() }
             .keyboardShortcut("q", modifiers: .command)
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
 
-<dictionary title="thyme-ng">
-    <suite name="thyme-ng Suite" code="THYM" description="thyme-ng scripts">
+<dictionary title="Timeyard">
+    <suite name="Timeyard Suite" code="THYM" description="Timeyard scripts">
         <command name="start" code="THYMstrt" description="Start or continue the timer">
             <cocoa class="StartCommand"/>
         </command>

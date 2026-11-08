@@ -1,36 +1,36 @@
 {
   "sourceLanguage": "en",
   "strings": {
-    "About thyme-ng": {
+    "About Timeyard": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Über thyme-ng"
+            "value": "Über Timeyard"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Acerca de thyme-ng"
+            "value": "Acerca de Timeyard"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "À propos de thyme-ng"
+            "value": "À propos de Timeyard"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Informazioni su thyme-ng"
+            "value": "Informazioni su Timeyard"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sobre o thyme-ng"
+            "value": "Sobre o Timeyard"
           }
         }
       }
@@ -691,36 +691,36 @@
         }
       }
     },
-    "Pauses the thyme-ng stopwatch and keeps the elapsed time.": {
+    "Pauses the Timeyard stopwatch and keeps the elapsed time.": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pausiert die Stoppuhr von thyme-ng und behält die vergangene Zeit."
+            "value": "Pausiert die Stoppuhr von Timeyard und behält die vergangene Zeit."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pausa el cronómetro de thyme-ng y conserva el tiempo transcurrido."
+            "value": "Pausa el cronómetro de Timeyard y conserva el tiempo transcurrido."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Suspend le chronomètre de thyme-ng et conserve le temps écoulé."
+            "value": "Suspend le chronomètre de Timeyard et conserve le temps écoulé."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mette in pausa il cronometro di thyme-ng e conserva il tempo trascorso."
+            "value": "Mette in pausa il cronometro di Timeyard e conserva il tempo trascorso."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pausa o cronômetro do thyme-ng e mantém o tempo decorrido."
+            "value": "Pausa o cronômetro do Timeyard e mantém o tempo decorrido."
           }
         }
       }
@@ -759,36 +759,36 @@
         }
       }
     },
-    "Quit thyme-ng": {
+    "Quit Timeyard": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "thyme-ng beenden"
+            "value": "Timeyard beenden"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Salir de thyme-ng"
+            "value": "Salir de Timeyard"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quitter thyme-ng"
+            "value": "Quitter Timeyard"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esci da thyme-ng"
+            "value": "Esci da Timeyard"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Encerrar o thyme-ng"
+            "value": "Encerrar o Timeyard"
           }
         }
       }
@@ -861,36 +861,36 @@
         }
       }
     },
-    "Returns the time on the thyme-ng stopwatch as text.": {
+    "Returns the time on the Timeyard stopwatch as text.": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gibt die Zeit der Stoppuhr von thyme-ng als Text zurück."
+            "value": "Gibt die Zeit der Stoppuhr von Timeyard als Text zurück."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Devuelve el tiempo del cronómetro de thyme-ng como texto."
+            "value": "Devuelve el tiempo del cronómetro de Timeyard como texto."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Renvoie le temps du chronomètre de thyme-ng sous forme de texte."
+            "value": "Renvoie le temps du chronomètre de Timeyard sous forme de texte."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Restituisce il tempo del cronometro di thyme-ng come testo."
+            "value": "Restituisce il tempo del cronometro di Timeyard come testo."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retorna o tempo do cronômetro do thyme-ng como texto."
+            "value": "Retorna o tempo do cronômetro do Timeyard como texto."
           }
         }
       }
@@ -1167,104 +1167,104 @@
         }
       }
     },
-    "Start thyme-ng at login": {
+    "Start Timeyard at login": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "thyme-ng bei der Anmeldung starten"
+            "value": "Timeyard bei der Anmeldung starten"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abrir thyme-ng al iniciar sesión"
+            "value": "Abrir Timeyard al iniciar sesión"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ouvrir thyme-ng à l'ouverture de session"
+            "value": "Ouvrir Timeyard à l'ouverture de session"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Avvia thyme-ng all'accesso"
+            "value": "Avvia Timeyard all'accesso"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abrir o thyme-ng ao iniciar a sessão"
+            "value": "Abrir o Timeyard ao iniciar a sessão"
           }
         }
       }
     },
-    "Starts the thyme-ng stopwatch if it is stopped, pauses it if it runs.": {
+    "Starts the Timeyard stopwatch if it is stopped, pauses it if it runs.": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Startet die Stoppuhr von thyme-ng, wenn sie steht, und pausiert sie, wenn sie läuft."
+            "value": "Startet die Stoppuhr von Timeyard, wenn sie steht, und pausiert sie, wenn sie läuft."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inicia el cronómetro de thyme-ng si está parado, lo pausa si está en marcha."
+            "value": "Inicia el cronómetro de Timeyard si está parado, lo pausa si está en marcha."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Démarre le chronomètre de thyme-ng s'il est arrêté, le suspend s'il fonctionne."
+            "value": "Démarre le chronomètre de Timeyard s'il est arrêté, le suspend s'il fonctionne."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Avvia il cronometro di thyme-ng se è fermo, lo mette in pausa se è in funzione."
+            "value": "Avvia il cronometro di Timeyard se è fermo, lo mette in pausa se è in funzione."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inicia o cronômetro do thyme-ng se ele está parado, o pausa se ele está em execução."
+            "value": "Inicia o cronômetro do Timeyard se ele está parado, o pausa se ele está em execução."
           }
         }
       }
     },
-    "Starts the thyme-ng stopwatch, or continues it after a pause.": {
+    "Starts the Timeyard stopwatch, or continues it after a pause.": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Startet die Stoppuhr von thyme-ng oder setzt sie nach einer Pause fort."
+            "value": "Startet die Stoppuhr von Timeyard oder setzt sie nach einer Pause fort."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inicia el cronómetro de thyme-ng, o lo continúa después de una pausa."
+            "value": "Inicia el cronómetro de Timeyard, o lo continúa después de una pausa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Démarre le chronomètre de thyme-ng, ou le continue après une pause."
+            "value": "Démarre le chronomètre de Timeyard, ou le continue après une pause."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Avvia il cronometro di thyme-ng, o lo continua dopo una pausa."
+            "value": "Avvia il cronometro di Timeyard, o lo continua dopo una pausa."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inicia o cronômetro do thyme-ng, ou o continua depois de uma pausa."
+            "value": "Inicia o cronômetro do Timeyard, ou o continua depois de uma pausa."
           }
         }
       }
@@ -1473,36 +1473,36 @@
         }
       }
     },
-    "thyme-ng Preferences": {
+    "Timeyard Preferences": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "thyme-ng Einstellungen"
+            "value": "Timeyard Einstellungen"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preferencias de thyme-ng"
+            "value": "Preferencias de Timeyard"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Préférences de thyme-ng"
+            "value": "Préférences de Timeyard"
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preferenze di thyme-ng"
+            "value": "Preferenze di Timeyard"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preferências do thyme-ng"
+            "value": "Preferências do Timeyard"
           }
         }
       }

@@ -41,7 +41,7 @@ private struct GeneralSettingsView: View {
             }
 
             Section("Startup") {
-                Toggle("Start thyme-ng at login", isOn: $loginItem.isEnabled)
+                Toggle("Start Timeyard at login", isOn: $loginItem.isEnabled)
 
                 if let error = loginItem.lastError {
                     Text(error)

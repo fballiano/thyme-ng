@@ -1,17 +1,17 @@
 <div align="center">
 <picture>
 <source media="(prefers-color-scheme: dark)" srcset="Docs/icon-dark.png" />
-<img src="Docs/icon-light.png" width="128" alt="thyme-ng" />
+<img src="Docs/icon-light.png" width="128" alt="Timeyard" />
 </picture>
-<h1>thyme-ng</h1>
+<h1>Timeyard</h1>
 <p><strong>A menu bar stopwatch for macOS.</strong></p>
 <p>
-<a href="https://github.com/fballiano/thyme-ng/releases/latest"><img src="https://img.shields.io/github/v/release/fballiano/thyme-ng?style=for-the-badge&color=2F7D3A&labelColor=1B1F23" alt="Latest release" /></a>
-<a href="https://github.com/fballiano/thyme-ng/releases"><img src="https://img.shields.io/github/downloads/fballiano/thyme-ng/total?style=for-the-badge&color=2F7D3A&labelColor=1B1F23" alt="Downloads" /></a>
+<a href="https://github.com/fballiano/timeyard/releases/latest"><img src="https://img.shields.io/github/v/release/fballiano/timeyard?style=for-the-badge&color=2F7D3A&labelColor=1B1F23" alt="Latest release" /></a>
+<a href="https://github.com/fballiano/timeyard/releases"><img src="https://img.shields.io/github/downloads/fballiano/timeyard/total?style=for-the-badge&color=2F7D3A&labelColor=1B1F23" alt="Downloads" /></a>
 <img src="https://img.shields.io/badge/macOS-15%2B-2F7D3A?style=for-the-badge&labelColor=1B1F23&logo=apple&logoColor=white" alt="macOS 15 or later" />
 <a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT-2F7D3A?style=for-the-badge&labelColor=1B1F23" alt="MIT licence" /></a>
 </p>
-<p><a href="https://github.com/fballiano/thyme-ng/releases/latest"><img src="https://img.shields.io/badge/Download%20for%20macOS-2F7D3A?style=for-the-badge&labelColor=2F7D3A&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTQgMTd2MmEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyIC0ydi0yIi8+PHBhdGggZD0iTTcgMTFsNSA1bDUgLTUiLz48cGF0aCBkPSJNMTIgNGwwIDEyIi8+PC9zdmc+" alt="Download for macOS" height="36" /></a></p>
+<p><a href="https://github.com/fballiano/timeyard/releases/latest"><img src="https://img.shields.io/badge/Download%20for%20macOS-2F7D3A?style=for-the-badge&labelColor=2F7D3A&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTQgMTd2MmEyIDIgMCAwIDAgMiAyaDEyYTIgMiAwIDAgMCAyIC0ydi0yIi8+PHBhdGggZD0iTTcgMTFsNSA1bDUgLTUiLz48cGF0aCBkPSJNMTIgNGwwIDEyIi8+PC9zdmc+" alt="Download for macOS" height="36" /></a></p>
 </div>
 
 <table align=center><tr><td align=center>
@@ -41,19 +41,31 @@
 
 With [Homebrew](https://brew.sh):
 
-```bash
-brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
-brew trust --cask fballiano/thyme-ng/thyme-ng
-brew install --cask thyme-ng
+```sh
+brew tap fballiano/tap
+brew trust --tap fballiano/tap
+brew install --cask timeyard
 ```
 
-The URL is part of the first command, because this repository is the tap itself.
 Homebrew 6 refuses to load a cask from a tap outside `Homebrew/*` until you
 trust it, so the second command is also necessary.
 
+### From thyme-ng
+
+Timeyard was called thyme-ng before. Your settings and your sessions stay after
+the change. If you installed thyme-ng with Homebrew, run this command:
+
+```sh
+brew uninstall --cask fballiano/thyme-ng/thyme-ng && brew install --cask fballiano/tap/timeyard && brew untap fballiano/thyme-ng
+```
+
+If you installed thyme-ng from the DMG, quit it, move **thyme-ng** from
+**Applications** to the Bin, and install Timeyard. An AppleScript that names
+`"thyme-ng"` must name `"Timeyard"` now.
+
 Or download the DMG from the
-[latest release](https://github.com/fballiano/thyme-ng/releases/latest).
-Open it and drag **thyme-ng** into **Applications**.
+[latest release](https://github.com/fballiano/timeyard/releases/latest).
+Open it and drag **Timeyard** into **Applications**.
 
 The application is signed with an Apple Developer ID and notarized by Apple, so
 it opens like any other application.
@@ -75,7 +87,7 @@ Open **Preferences…** from the menu, or press <kbd>⌘</kbd><kbd>,</kbd>.
 | Pause during screensaver or screen lock | on | Same, for the screen. |
 | Ask for a tag when a session finishes | off | Shows a small window to label the session. |
 | Delete old sessions automatically | on, keep 10 | Keeps only the newest N sessions. |
-| Start thyme-ng at login | **on** | Registers a login item through `SMAppService`. The first launch switches it on. A later change by you stays. |
+| Start Timeyard at login | **on** | Registers a login item through `SMAppService`. The first launch switches it on. A later change by you stays. |
 
 The **Shortcuts** tab holds the three global hot keys: Start / Pause, Restart and
 Finish. No shortcut is set until you record one.
@@ -85,27 +97,27 @@ Finish. No shortcut is set until you record one.
 The application speaks English, Italian, French, Spanish, Portuguese (Brazil)
 and German. It follows the language of macOS. To read it in one other language,
 open **System Settings → General → Language & Region**, add the language to
-**Applications**, and select **thyme-ng**.
+**Applications**, and select **Timeyard**.
 
 ## Automation
 
 ```applescript
-tell application "thyme-ng" to start
-tell application "thyme-ng" to pause
-tell application "thyme-ng" to toggle
-tell application "thyme-ng" to restart
-tell application "thyme-ng" to stop
-tell application "thyme-ng" to elapsed   -- returns "12:34"
+tell application "Timeyard" to start
+tell application "Timeyard" to pause
+tell application "Timeyard" to toggle
+tell application "Timeyard" to restart
+tell application "Timeyard" to stop
+tell application "Timeyard" to elapsed   -- returns "12:34"
 ```
 
 From a terminal:
 
 ```bash
-osascript -e 'tell application "thyme-ng" to toggle'
+osascript -e 'tell application "Timeyard" to toggle'
 ```
 
 The same commands are App Intents, so the Shortcuts app lists them under
-**thyme-ng**: Start Timer, Pause Timer, Toggle Timer, Finish Timer and Get
+**Timeyard**: Start Timer, Pause Timer, Toggle Timer, Finish Timer and Get
 Elapsed Time. Spotlight runs them too.
 
 ## Export
@@ -131,6 +143,9 @@ Elapsed Time. Spotlight runs them too.
 | Sessions | `~/Library/Application Support/thyme-ng/thyme-ng.store` (SwiftData) |
 | Settings | `~/Library/Preferences/com.fabrizioballiano.thyme-ng.plist` |
 
+The two paths keep the old name, thyme-ng, on purpose. An install of thyme-ng
+keeps its data after the change to Timeyard.
+
 <details>
 <summary><strong>Build from source</strong></summary>
 
@@ -150,7 +165,7 @@ make test        # run the unit tests
 make run         # build, then launch
 make dmg         # build the Release app and pack it into ./dist/*.dmg
 make generate    # rebuild ThymeNG.xcodeproj from project.yml (needs xcodegen)
-make uninstall   # remove /Applications/thyme-ng.app
+make uninstall   # remove /Applications/Timeyard.app
 ```
 
 To work in Xcode, open `ThymeNG.xcodeproj` and press Run. The project signs ad
@@ -210,10 +225,11 @@ A few details worth knowing:
 
 ## Credits
 
-`thyme-ng` is a rewrite of [Thyme](https://github.com/joaomoreno/thyme) by João
-Moreno, which stopped building on a current Mac. The behaviour is the same, the
-implementation is new, and the AppleScript command names still match, so an old
-script keeps working. The old Thyme database is not read.
+Timeyard is a rewrite of [Thyme](https://github.com/joaomoreno/thyme) by João
+Moreno, which stopped building on a current Mac. Its first name was thyme-ng.
+The behaviour is the same, the implementation is new, and the AppleScript
+command names still match, so an old script keeps working after you change the
+application name in it. The old Thyme database is not read.
 
 Third-party material is listed in [NOTICE.md](NOTICE.md).
 

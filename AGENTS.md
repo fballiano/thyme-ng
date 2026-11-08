@@ -4,9 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project is
 
-`thyme-ng` is a macOS menu bar stopwatch. It is a complete rewrite of
+Timeyard is a macOS menu bar stopwatch. It is a complete rewrite of
 [Thyme](https://github.com/joaomoreno/thyme) by João Moreno. The behaviour is the
 same. The implementation is new: Swift 6, SwiftUI, SwiftData.
+
+The first name of the application was `thyme-ng`. Some internal names keep the
+old name on purpose. See "Names" below.
 
 The application is an agent application (`LSUIElement: true`). It has no dock
 icon and no ordinary windows.
@@ -134,9 +137,10 @@ new GitHub release. It passes the version of the tag as `MARKETING_VERSION` and
 the run number as `CURRENT_PROJECT_VERSION`, so `project.yml` does not need a
 change for each release.
 
-The last step then writes the version into `project.yml` and into
+After the release, one step writes the version into `project.yml` and into
 `ThymeNG.xcodeproj/project.pbxproj`, so a local build shows the version of the
-last release. Do not edit the `MARKETING_VERSION` lines by hand.
+last release. Do not edit the `MARKETING_VERSION` lines by hand. The steps after
+it update the Homebrew cask. See "Homebrew" below.
 
 A release is signed with the Developer ID certificate and notarized by Apple.
 The workflow passes the signing settings to `make build` through `XCODE_FLAGS`,
@@ -145,33 +149,39 @@ notarizes the app with `Tools/notarize.sh`, packs the stapled app with
 would build again, and a second build can sign the app again and drop its
 ticket. Local builds stay signed ad hoc and need no certificate.
 
-The variable and the five secrets that the workflow needs are listed at the top
+The variable and the six secrets that the workflow needs are listed at the top
 of `release.yml`. A manual run with "dry run" on (the default) signs and
 notarizes, keeps the disk image as an artifact, and publishes nothing.
 
 ## Homebrew
 
-This repository is also the Homebrew tap. The cask is `Casks/thyme-ng.rb`. A tap
-needs only a `Casks/` directory at its root, so no second repository exists. The
-name of the repository has no `homebrew-` prefix, so the tap command needs the
-URL:
+The cask lives in a separate repository, `fballiano/homebrew-tap` (tap name
+`fballiano/tap`), as `Casks/timeyard.rb`. Other applications share the tap. A
+user installs the application with these commands:
 
-```bash
-brew tap fballiano/thyme-ng https://github.com/fballiano/thyme-ng
-brew trust --cask fballiano/thyme-ng/thyme-ng
-brew install --cask thyme-ng
+```sh
+brew tap fballiano/tap
+brew trust --tap fballiano/tap
+brew install --cask timeyard
 ```
 
 Homebrew 6 refuses to load a cask from a tap outside `Homebrew/*` until the user
 trusts it, so `brew trust` is part of the instructions.
 
-The same last step writes the new `version` and `sha256` into the cask and pushes
-the change to the default branch. Do not edit the two lines by hand.
+The release workflow updates the cask. It checks out the tap with the
+`TAP_DEPLOY_KEY` secret, a deploy key with write access to the tap only. It
+writes the new `version` and `sha256` into `Casks/timeyard.rb` and pushes the
+change to the `main` branch of the tap. Do not edit the two lines by hand.
+
+`Casks/thyme-ng.rb` in this repository is the old cask, from the time when this
+repository was its own tap (`fballiano/thyme-ng`). It is frozen at version
+1.0.9 and deprecated, so a user of the old tap learns about the move. Do not
+update it, and do not delete it.
 
 `brew audit` refuses a path, so a test of the cask needs the tap and the trust:
 
 ```bash
-brew audit --cask --strict --online fballiano/thyme-ng/thyme-ng
+brew audit --cask --strict --online fballiano/tap/timeyard
 ```
 
 To test an install without a change to `/Applications`, give a different
@@ -179,8 +189,8 @@ directory. `uninstall` does not accept the option, because it reads the
 directory from the receipt of the install:
 
 ```bash
-brew install --cask --appdir=/tmp/apps thyme-ng
-brew uninstall --cask thyme-ng
+brew install --cask --appdir=/tmp/apps fballiano/tap/timeyard
+brew uninstall --cask timeyard
 ```
 
 Homebrew adds the quarantine attribute, and `--no-quarantine` no longer exists,
@@ -268,5 +278,20 @@ Add the same guard to any new code that touches the system or the user data.
   the code keeps or corrects. Keep that style.
 - The export JSON shape and the AppleScript command codes match the original.
   Do not change them.
-- The bundle identifier is `com.fabrizioballiano.thyme-ng`. The product name is
-  `thyme-ng`. The module name is `ThymeNG`.
+- The product name is `Timeyard`, so the application is `Timeyard.app` and the
+  disk image is `Timeyard-<version>.dmg`.
+
+## Names
+
+The application was called `thyme-ng` before. These names keep the old name on
+purpose. Do not change them:
+
+- The bundle identifier, `com.fabrizioballiano.thyme-ng`. The settings, the login
+  item and the permissions of an existing install are keyed by it.
+- The data folder and the store, `~/Library/Application Support/thyme-ng/thyme-ng.store`.
+  A new name would hide the sessions of an existing install.
+- The module name, `ThymeNG` (`PRODUCT_MODULE_NAME` in `project.yml`). The tests
+  import it, and App Intents are keyed by it.
+- The type names of the App Intents, so the shortcuts of a user keep working.
+- The project, the scheme, the targets, the source folders, the Swift types and
+  `Resources/thyme-ng.sdef`. Users do not see these names.

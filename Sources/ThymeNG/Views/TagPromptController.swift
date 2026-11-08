@@ -23,7 +23,7 @@ final class TagPromptController: NSObject {
         }
 
         let window = NSWindow(contentViewController: NSHostingController(rootView: view))
-        window.title = "thyme-ng"
+        window.title = "Timeyard"
         window.styleMask = [.titled, .closable]
         window.isReleasedWhenClosed = false
         window.level = .floating

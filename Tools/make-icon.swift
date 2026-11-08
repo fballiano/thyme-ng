@@ -1,6 +1,6 @@
 #!/usr/bin/env swift
 //
-// Draws the thyme-ng application icon.
+// Draws the Timeyard application icon.
 //
 //   swift Tools/make-icon.swift
 //

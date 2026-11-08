@@ -8,7 +8,7 @@ import Foundation
 
 struct StartTimerIntent: AppIntent {
     static let title: LocalizedStringResource = "Start Timer"
-    static let description = IntentDescription("Starts the thyme-ng stopwatch, or continues it after a pause.")
+    static let description = IntentDescription("Starts the Timeyard stopwatch, or continues it after a pause.")
     static let openAppWhenRun = false
 
     @MainActor
@@ -20,7 +20,7 @@ struct StartTimerIntent: AppIntent {
 
 struct PauseTimerIntent: AppIntent {
     static let title: LocalizedStringResource = "Pause Timer"
-    static let description = IntentDescription("Pauses the thyme-ng stopwatch and keeps the elapsed time.")
+    static let description = IntentDescription("Pauses the Timeyard stopwatch and keeps the elapsed time.")
     static let openAppWhenRun = false
 
     @MainActor
@@ -32,7 +32,7 @@ struct PauseTimerIntent: AppIntent {
 
 struct ToggleTimerIntent: AppIntent {
     static let title: LocalizedStringResource = "Toggle Timer"
-    static let description = IntentDescription("Starts the thyme-ng stopwatch if it is stopped, pauses it if it runs.")
+    static let description = IntentDescription("Starts the Timeyard stopwatch if it is stopped, pauses it if it runs.")
     static let openAppWhenRun = false
 
     @MainActor
@@ -56,7 +56,7 @@ struct FinishTimerIntent: AppIntent {
 
 struct ElapsedTimeIntent: AppIntent {
     static let title: LocalizedStringResource = "Get Elapsed Time"
-    static let description = IntentDescription("Returns the time on the thyme-ng stopwatch as text.")
+    static let description = IntentDescription("Returns the time on the Timeyard stopwatch as text.")
     static let openAppWhenRun = false
 
     @MainActor

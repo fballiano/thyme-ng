@@ -6,8 +6,8 @@ name: Release
 #
 # The workflow builds the universal Release app, signs it with the Developer
 # ID certificate, has Apple notarize it, packs it into a DMG that is signed and
-# notarized too, attaches the DMG to a new GitHub release, and updates the
-# Homebrew cask on the default branch.
+# notarized too, attaches the DMG to a new GitHub release, stores the version
+# on the default branch, and updates the Homebrew cask in fballiano/homebrew-tap.
 #
 # Run it by hand (Actions -> Release -> Run workflow) with "dry run" on to
 # sign and notarize without a release: the DMG stays on the run as an
@@ -25,6 +25,8 @@ name: Release
 #                                          .p8, in base64
 #   secret    NOTARY_KEY_ID                the ID of that key
 #   secret    NOTARY_ISSUER_ID             the issuer ID of that key
+#   secret    TAP_DEPLOY_KEY               a deploy key with write access to
+#                                          fballiano/homebrew-tap
 
 on:
   push:
@@ -49,7 +51,7 @@ jobs:
     timeout-minutes: 90
     env:
       TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
-      APP: build/Build/Products/Release/thyme-ng.app
+      APP: build/Build/Products/Release/Timeyard.app
       PUBLISH: ${{ github.event_name == 'push' || !inputs.dry_run }}
 
     steps:
@@ -175,18 +177,18 @@ jobs:
           spctl --assess --type open --context context:primary-signature --verbose=4 "$path"
           # The app must be a universal binary, signed, and accepted by
           # Gatekeeper as notarized.
-          hdiutil attach "$path" -nobrowse -mountpoint /tmp/thyme-ng-dmg
-          lipo -archs /tmp/thyme-ng-dmg/thyme-ng.app/Contents/MacOS/thyme-ng
-          codesign --verify --strict --verbose /tmp/thyme-ng-dmg/thyme-ng.app
-          xcrun stapler validate /tmp/thyme-ng-dmg/thyme-ng.app
-          spctl --assess --type execute --verbose=4 /tmp/thyme-ng-dmg/thyme-ng.app
-          hdiutil detach /tmp/thyme-ng-dmg
+          hdiutil attach "$path" -nobrowse -mountpoint /tmp/timeyard-dmg
+          lipo -archs /tmp/timeyard-dmg/Timeyard.app/Contents/MacOS/Timeyard
+          codesign --verify --strict --verbose /tmp/timeyard-dmg/Timeyard.app
+          xcrun stapler validate /tmp/timeyard-dmg/Timeyard.app
+          spctl --assess --type execute --verbose=4 /tmp/timeyard-dmg/Timeyard.app
+          hdiutil detach /tmp/timeyard-dmg
 
       - name: Keep the dry-run disk image
         if: env.PUBLISH != 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: thyme-ng-${{ steps.version.outputs.version }}-dry-run
+          name: Timeyard-${{ steps.version.outputs.version }}-dry-run
           path: ${{ steps.dmg.outputs.path }}
 
       - name: Write the release notes
@@ -196,7 +198,7 @@ jobs:
           ## Install
 
           1. Download the DMG below.
-          2. Open it and drag **thyme-ng** into **Applications**.
+          2. Open it and drag **Timeyard** into **Applications**.
 
           The app is signed with an Apple Developer ID and notarized by Apple.
           It has no dock icon. It appears in the menu bar.
@@ -215,44 +217,74 @@ jobs:
         run: |
           gh release create "v${{ steps.version.outputs.version }}" \
             "${{ steps.dmg.outputs.path }}" \
-            --title "thyme-ng ${{ steps.version.outputs.version }}" \
+            --title "Timeyard ${{ steps.version.outputs.version }}" \
             --notes-file /tmp/notes.md \
             --generate-notes \
             --target "${{ github.sha }}"
 
-      # This repository is also the Homebrew tap. The cask must point at the
-      # release that the step above published, so this step runs last. The same
-      # commit stores the version, which a local build reads.
-      - name: Update the Homebrew cask and the stored version
+      # A local build reads the version from project.yml and from the project
+      # file. This step writes the version of the release into the two files
+      # on the default branch. It runs after the release is published.
+      - name: Update the stored version
         if: env.PUBLISH == 'true'
         env:
           BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
           version="${{ steps.version.outputs.version }}"
-          sha256="${{ steps.dmg.outputs.sha256 }}"
           # A tag build checks out a detached HEAD, so move to the branch first.
           git fetch --depth 1 origin "$BRANCH"
           git checkout -B "$BRANCH" "origin/$BRANCH"
-          sed -i '' \
-            -e "s|^  version \".*\"$|  version \"$version\"|" \
-            -e "s|^  sha256 \".*\"$|  sha256 \"$sha256\"|" \
-            Casks/thyme-ng.rb
           sed -i '' \
             -e "s|^    MARKETING_VERSION: \".*\"$|    MARKETING_VERSION: \"$version\"|" \
             project.yml
           sed -i '' \
             -e "s|MARKETING_VERSION = .*;|MARKETING_VERSION = $version;|" \
             ThymeNG.xcodeproj/project.pbxproj
-          files="Casks/thyme-ng.rb project.yml ThymeNG.xcodeproj/project.pbxproj"
+          files="project.yml ThymeNG.xcodeproj/project.pbxproj"
           if git diff --quiet -- $files; then
             echo "The repository already holds version $version."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update the Homebrew cask and the version to $version" -- $files
+          git commit -m "Update the version to $version" -- $files
           git push origin "HEAD:$BRANCH"
+
+      # The cask lives in fballiano/homebrew-tap. The secret TAP_DEPLOY_KEY is
+      # a deploy key with write access to that repository only.
+      - name: Check out the Homebrew tap
+        if: env.PUBLISH == 'true'
+        uses: actions/checkout@v7
+        with:
+          repository: fballiano/homebrew-tap
+          ssh-key: ${{ secrets.TAP_DEPLOY_KEY }}
+          path: homebrew-tap
+
+      - name: Point the cask at the release
+        if: env.PUBLISH == 'true'
+        working-directory: homebrew-tap
+        run: |
+          set -euo pipefail
+          version="${{ steps.version.outputs.version }}"
+          sha256="${{ steps.dmg.outputs.sha256 }}"
+          sed -i '' \
+            -e "s|^  version \".*\"$|  version \"$version\"|" \
+            -e "s|^  sha256 \".*\"$|  sha256 \"$sha256\"|" \
+            Casks/timeyard.rb
+          if git diff --quiet; then
+            echo "The tap already holds version $version."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Point timeyard at $version" -- Casks/timeyard.rb
+          # Another application can push to the tap at the same time.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+          done
+          exit 1
 
       - name: Remove the signing keychain and the notary key
         if: always()

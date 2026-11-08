@@ -3,8 +3,8 @@
 # Notarizes an app or a disk image, waits for Apple's answer, and staples the
 # ticket to it.
 #
-#   Tools/notarize.sh dist/thyme-ng-1.0.0.dmg
-#   Tools/notarize.sh build/Build/Products/Release/thyme-ng.app
+#   Tools/notarize.sh dist/Timeyard-1.0.0.dmg
+#   Tools/notarize.sh build/Build/Products/Release/Timeyard.app
 #
 # It needs an App Store Connect API key in three variables: NOTARY_KEY_PATH
 # (the .p8 file), NOTARY_KEY_ID, and NOTARY_ISSUER_ID. The release workflow

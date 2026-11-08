@@ -136,7 +136,7 @@ struct SessionStoreTests {
         let date = Date(timeIntervalSince1970: 1_700_000_000)
         let name = SessionStore.exportFileName(for: date)
 
-        #expect(name.hasPrefix("thyme-ng-"))
+        #expect(name.hasPrefix("timeyard-"))
         #expect(name.hasSuffix(".json"))
     }
 

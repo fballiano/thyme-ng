@@ -1,10 +1,10 @@
 # Third-party material
 
-`thyme-ng` itself is MIT licensed. See [LICENSE](LICENSE).
+Timeyard itself is MIT licensed. See [LICENSE](LICENSE).
 
 ## Thyme
 
-`thyme-ng` reproduces the behaviour of Thyme by João Moreno. No code from that
+Timeyard reproduces the behaviour of Thyme by João Moreno. No code from that
 project is copied; the whole implementation is new.
 
 - Source: https://github.com/joaomoreno/thyme

@@ -6,7 +6,7 @@ import Foundation
 /// The suite code and the command codes are the same as the original app, so an
 /// existing script keeps working after you change the application name:
 ///
-///     tell application "thyme-ng" to start
+///     tell application "Timeyard" to start
 ///
 /// The class names are exported to the Objective-C runtime, because the
 /// scripting definition refers to them by name.
