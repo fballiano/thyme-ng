@@ -173,10 +173,8 @@ The release workflow updates the cask. It checks out the tap with the
 writes the new `version` and `sha256` into `Casks/timeyard.rb` and pushes the
 change to the `main` branch of the tap. Do not edit the two lines by hand.
 
-`Casks/thyme-ng.rb` in this repository is the old cask, from the time when this
-repository was its own tap (`fballiano/thyme-ng`). It is frozen at version
-1.0.9 and deprecated, so a user of the old tap learns about the move. Do not
-update it, and do not delete it.
+Until 1.0.9, this repository was its own tap, `fballiano/thyme-ng`. It has no
+cask now. A user of the old tap moves with the commands in the README.
 
 `brew audit` refuses a path, so a test of the cask needs the tap and the trust:
 
